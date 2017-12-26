@@ -1,6 +1,8 @@
 package com.ccs.blockchain.controller;
 
 import com.ccs.blockchain.common.HttpClient;
+import com.ccs.blockchain.common.HttpClientUtil;
+import com.ccs.blockchain.common.HttpClientUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,6 +13,13 @@ public class MyController {
 
     @RequestMapping("getDividends.php")
     public String dividends(String addr){
-        return HttpClient.get("https://btcdiv.com/getDividends.php?addr=aaa",new HashMap<>(),new HashMap<>());
+        //return HttpClient.get("https://btcdiv.com/getDividends.php?addr=aaa",new HashMap<>(),new HashMap<>());
+
+        try {
+            return HttpClientUtils.get("https://btcdiv.com/getDividends.php?addr="+addr, "GBK");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "error";
+        }
     }
 }

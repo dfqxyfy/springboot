@@ -1,8 +1,9 @@
 package com.ccs.blockchain.common;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.SocketTimeoutException;
 import java.security.GeneralSecurityException;
+import java.security.KeyStore;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ArrayList;
@@ -12,34 +13,38 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.SSLSocket;
+import javax.net.ssl.*;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
-import org.apache.http.Consts;
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
+import org.apache.http.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.config.RequestConfig.Builder;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.conn.ConnectTimeoutException;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLContextBuilder;
-import org.apache.http.conn.ssl.TrustStrategy;
-import org.apache.http.conn.ssl.X509HostnameVerifier;
+import org.apache.http.conn.scheme.PlainSocketFactory;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.*;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.impl.conn.DefaultClientConnection;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.message.BasicNameValuePair;
+import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.HttpParams;
+import org.apache.http.params.HttpProtocolParams;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.protocol.HttpContext;
 
 /**
  * 依赖的jar包有：commons-lang-2.6.jar、httpclient-4.3.2.jar、httpcore-4.3.1.jar、commons-io-2.4.jar
@@ -289,7 +294,6 @@ public class HttpClientUtils {
                     return true;
                 }
             }).build();
-
             SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslContext, new X509HostnameVerifier() {
 
                 @Override
@@ -321,9 +325,85 @@ public class HttpClientUtils {
         }
     }
 
+    private HttpClient getNewHttpClient() {
+        try {
+            KeyStore trustStore = KeyStore.getInstance(KeyStore
+                    .getDefaultType());
+            trustStore.load(null, null);
+            SSLSocketFactory sf = new SSLSocketFactory(trustStore);
+            sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+            HttpParams params = new BasicHttpParams();
+            HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
+            HttpProtocolParams.setContentCharset(params, HTTP.UTF_8);
+            SchemeRegistry registry = new SchemeRegistry();
+            registry.register(new Scheme("http", PlainSocketFactory
+                    .getSocketFactory(), 80));
+            registry.register(new Scheme("https", sf, 443));
+            ClientConnectionManager ccm = new ThreadSafeClientConnManager(
+                    params, registry);
+            return new DefaultHttpClient(ccm, params);
+        } catch (Exception e) {
+            return new DefaultHttpClient();
+        }
+    }
+
+    private void mytest(){
+        DefaultHttpClient httpclient = (DefaultHttpClient) getNewHttpClient();
+
+        try {
+            //Secure Protocol implementation.
+            SSLContext ctx = SSLContext.getInstance("SSL");
+            //Implementation of a trust manager for X509 certificates
+            X509TrustManager tm = new X509TrustManager() {
+
+                public void checkClientTrusted(X509Certificate[] xcs,
+                                               String string) throws CertificateException {
+
+                }
+
+                public void checkServerTrusted(X509Certificate[] xcs,
+                                               String string) throws CertificateException {
+                }
+
+                public X509Certificate[] getAcceptedIssuers() {
+                    return null;
+                }
+            };
+            ctx.init(null, new TrustManager[] { tm }, null);
+            SSLSocketFactory ssf = new SSLSocketFactory(ctx);
+            ClientConnectionManager ccm = httpclient.getConnectionManager();
+            //register https protocol in httpclient's scheme registry
+            SchemeRegistry sr = ccm.getSchemeRegistry();
+            sr.register(new Scheme("https", 443, ssf));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        HttpGet httpGet = new HttpGet("https://btcdiv.com/getDividends.php?addr=1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP");
+        try {
+            HttpResponse response = httpclient.execute(httpGet, new DefaultClientConnection());
+            InputStream stream = response.getEntity().getContent();
+            BufferedReader br = new BufferedReader(new InputStreamReader(stream));
+            String buf = null;
+            while((buf=br.readLine())!=null){
+                System.out.println(buf);
+            }
+            System.out.println();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         try {
+//            if(true){
+//                HttpClientUtils httpClientUtils = new HttpClientUtils();
+//                httpClientUtils.mytest();
+//                return;
+//            }
 
+
+            System.setProperty("https.protocols", "TLSv1");
             //System.setProperty("https.protocols", "TLSv1.2,TLSv1.1,SSLv3");
             //String str= post("https://localhost:443/ssl/test.shtml","name=12&page=34","application/x-www-form-urlencoded", "UTF-8", 10000, 10000);
             String str = get("https://btcdiv.com/getDividends.php?addr=1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP", "GBK");

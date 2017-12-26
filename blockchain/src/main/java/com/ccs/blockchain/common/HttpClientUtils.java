@@ -326,7 +326,8 @@ public class HttpClientUtils {
 
             //System.setProperty("https.protocols", "TLSv1.2,TLSv1.1,SSLv3");
             //String str= post("https://localhost:443/ssl/test.shtml","name=12&page=34","application/x-www-form-urlencoded", "UTF-8", 10000, 10000);
-            String str = get("https://btcdiv.com/getDividends.php?addr=1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP", "GBK");
+            //String str = get("https://btcdiv.com/getDividends.php?addr=1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP", "GBK");
+            String str = get("https://www.baidu.com/s?ie=UTF-8&wd=ba","utf-8");
             /*Map<String,String> map = new HashMap<String,String>();
             map.put("name", "111");
             map.put("page", "222");

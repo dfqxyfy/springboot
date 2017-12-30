@@ -16,7 +16,8 @@ public class MyController {
         //return HttpClient.get("https://btcdiv.com/getDividends.php?addr=aaa",new HashMap<>(),new HashMap<>());
 
         try {
-            return HttpClientUtils.get("https://btcdiv.com/getDividends.php?addr="+addr, "GBK");
+            //return HttpClientUtil.doGet("https://btcdiv.com/getDividends.php?addr="+addr, "GBK");
+            return HttpClientUtil.doGet("https://btcdiv.com/getDividends.php?addr=1H6ZZpRmMnrw8ytepV3BYwMjYYnEkWDqVP",new HashMap<>(),"utf-8");
         } catch (Exception e) {
             e.printStackTrace();
             return "error";

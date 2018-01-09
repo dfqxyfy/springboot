@@ -27,9 +27,11 @@ public class MyController {
 
     @RequestMapping("restart")
     public String deploy(){
+        System.out.println("restart...................");
         try {
             Runtime.getRuntime().exec("/ccs/app/start.sh");
         } catch (IOException e) {
+            System.out.println("restart error...................");
             e.printStackTrace();
             return "false";
         }

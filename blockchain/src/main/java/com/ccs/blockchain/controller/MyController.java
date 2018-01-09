@@ -29,8 +29,8 @@ public class MyController {
     public String deploy(){
         System.out.println("restart...................");
         try {
-            Runtime.getRuntime().exec("/ccs/app/start.sh");
-        } catch (IOException e) {
+            //Runtime.getRuntime().exec("/ccs/app/start.sh");
+        } catch (Exception e) {
             System.out.println("restart error...................");
             e.printStackTrace();
             return "false";

@@ -6,6 +6,7 @@ import com.ccs.blockchain.common.HttpClientUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 @RestController
@@ -22,5 +23,18 @@ public class MyController {
             e.printStackTrace();
             return "error";
         }
+    }
+
+    @RequestMapping("restart")
+    public String deploy(){
+        System.out.println("restart...................");
+        try {
+            //Runtime.getRuntime().exec("/ccs/app/start.sh");
+        } catch (Exception e) {
+            System.out.println("restart error...................");
+            e.printStackTrace();
+            return "false";
+        }
+        return "success";
     }
 }

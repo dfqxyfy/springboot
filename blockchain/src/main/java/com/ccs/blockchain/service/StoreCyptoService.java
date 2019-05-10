@@ -1,7 +1,6 @@
 package com.ccs.blockchain.service;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import com.ccs.blockchain.entity.CryptocurrenciesData;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +17,8 @@ import java.util.List;
 @Service
 public class StoreCyptoService {
 
-    @Autowired
-    JsoupDataService jsoupDataService;
+    //@Autowired
+    JsoupDataUtil jsoupDataService = new JsoupDataUtil();
 
     @Autowired
     MongoTemplate mongoTemplate;

@@ -1,23 +1,23 @@
 package com.ccs.blockchain.service;
 
 import com.ccs.blockchain.entity.CryptocurrenciesData;
-import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
-public class JsoupDataService {
+public class JsoupDataUtil {
+    Document page = null;
+
+
+
     public List<CryptocurrenciesData> jsoupSpider(){
-        Document page = null;
         try {
             page = Jsoup.parse(new URL("https://coinmarketcap.com/"), 10000);
         } catch (IOException e) {
@@ -70,6 +70,6 @@ public class JsoupDataService {
     }
 
     public static void main(String[] args) {
-        new JsoupDataService().jsoupSpider();
+        new JsoupDataUtil().jsoupSpider();
     }
 }

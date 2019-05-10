@@ -13,19 +13,21 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StoreCyptoService {
 
     //@Autowired
-    JsoupDataUtil jsoupDataService = new JsoupDataUtil();
+
 
     @Autowired
     MongoTemplate mongoTemplate;
 
     @PostConstruct
     public void insert(){
-        List<CryptocurrenciesData> list = jsoupDataService.jsoupSpider();
+        JsoupDataUtil jsoupDataUtil = new JsoupDataUtil();
+        List<CryptocurrenciesData> list = jsoupDataUtil.jsoupSpider();
         //mongoTemplate.insert(cryptocurrenciesData);
         list.forEach(data->{
             Query query = new Query();
@@ -34,5 +36,9 @@ public class StoreCyptoService {
             Update update = new BasicUpdate(Document.parse(s));
             mongoTemplate.upsert(query,update,CryptocurrenciesData.class);
         });
+
+        Map<String, String> rate = jsoupDataUtil.getRate();
+
+
     }
 }

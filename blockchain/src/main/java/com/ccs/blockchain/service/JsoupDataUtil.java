@@ -28,11 +28,12 @@ public class JsoupDataUtil {
     public Map<String,String> getRate(){
         Element elementById = page.getElementById("currency-exchange-rates");
         Attributes attributes = elementById.attributes();
+        Map<String,String> map = new HashMap<>();
         attributes.forEach(attribute -> {
             //System.out.println(attribute.getKey()+"\t"+attribute.getValue());
+            map.put(attribute.getKey(),attribute.getValue());
         });
-        new HashMap<>();
-        return null;
+        return map;
     }
 
     public List<CryptocurrenciesData> jsoupSpider(){

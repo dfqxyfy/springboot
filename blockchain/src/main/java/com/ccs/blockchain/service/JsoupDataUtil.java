@@ -10,24 +10,33 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class JsoupDataUtil {
     Document page = null;
 
-
-
-    public List<CryptocurrenciesData> jsoupSpider(){
+    public JsoupDataUtil(){
         try {
             page = Jsoup.parse(new URL("https://coinmarketcap.com/"), 10000);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Map<String,String> getRate(){
         Element elementById = page.getElementById("currency-exchange-rates");
         Attributes attributes = elementById.attributes();
         attributes.forEach(attribute -> {
-            System.out.println(attribute.getKey()+"\t"+attribute.getValue());
+            //System.out.println(attribute.getKey()+"\t"+attribute.getValue());
         });
+        new HashMap<>();
+        return null;
+    }
+
+    public List<CryptocurrenciesData> jsoupSpider(){
+
 
         List<CryptocurrenciesData> resList = new ArrayList<>();
         Elements tbody = page.getElementsByTag("tbody");

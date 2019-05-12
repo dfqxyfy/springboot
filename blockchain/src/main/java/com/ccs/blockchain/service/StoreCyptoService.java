@@ -2,6 +2,7 @@ package com.ccs.blockchain.service;
 
 import com.alibaba.fastjson.JSON;
 import com.ccs.blockchain.entity.CryptocurrenciesData;
+import com.ccs.blockchain.entity.RateData;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class StoreCyptoService {
@@ -25,8 +25,8 @@ public class StoreCyptoService {
     MongoTemplate mongoTemplate;
 
     @PostConstruct
-    public void insert(){
-        JsoupDataUtil jsoupDataUtil = new JsoupDataUtil();
+    public void updateCryptocurrencies(){
+        JsoupCryptoDataUtil jsoupDataUtil = new JsoupCryptoDataUtil();
         List<CryptocurrenciesData> list = jsoupDataUtil.jsoupSpider();
         //mongoTemplate.insert(cryptocurrenciesData);
         list.forEach(data->{
@@ -37,7 +37,14 @@ public class StoreCyptoService {
             mongoTemplate.upsert(query,update,CryptocurrenciesData.class);
         });
 
-        Map<String, String> rate = jsoupDataUtil.getRate();
+        final List<RateData> rateDataList = jsoupDataUtil.getRate();
+        rateDataList.forEach(rateData -> {
+            Query query = new Query();
+            query.addCriteria(Criteria.where("coin").is(rateData.getCoin()));
+            String s = JSON.toJSONString(rateData);
+            Update update = new BasicUpdate(Document.parse(s));
+            mongoTemplate.upsert(query,update,RateData.class);
+        });
 
 
     }

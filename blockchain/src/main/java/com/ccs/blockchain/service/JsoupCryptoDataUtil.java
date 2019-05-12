@@ -1,6 +1,7 @@
 package com.ccs.blockchain.service;
 
 import com.ccs.blockchain.entity.CryptocurrenciesData;
+import com.ccs.blockchain.entity.RateData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;
@@ -14,10 +15,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class JsoupDataUtil {
+public class JsoupCryptoDataUtil {
     Document page = null;
 
-    public JsoupDataUtil(){
+    public JsoupCryptoDataUtil(){
         try {
             page = Jsoup.parse(new URL("https://coinmarketcap.com/"), 10000);
         } catch (IOException e) {
@@ -25,15 +26,19 @@ public class JsoupDataUtil {
         }
     }
 
-    public Map<String,String> getRate(){
+    public List<RateData> getRate(){
         Element elementById = page.getElementById("currency-exchange-rates");
         Attributes attributes = elementById.attributes();
         Map<String,String> map = new HashMap<>();
+        List<RateData> list = new ArrayList<>();
         attributes.forEach(attribute -> {
             //System.out.println(attribute.getKey()+"\t"+attribute.getValue());
-            map.put(attribute.getKey(),attribute.getValue());
+            RateData data = new RateData();
+            data.setCoin(attribute.getKey());
+            data.setRate(attribute.getValue());
+            list.add(data);
         });
-        return map;
+        return list;
     }
 
     public List<CryptocurrenciesData> jsoupSpider(){
@@ -80,6 +85,6 @@ public class JsoupDataUtil {
     }
 
     public static void main(String[] args) {
-        new JsoupDataUtil().jsoupSpider();
+        new JsoupCryptoDataUtil().jsoupSpider();
     }
 }

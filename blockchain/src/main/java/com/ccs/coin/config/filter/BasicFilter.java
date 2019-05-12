@@ -1,4 +1,4 @@
-package com.ccs.blockchain.config.filter;
+package com.ccs.coin.config.filter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

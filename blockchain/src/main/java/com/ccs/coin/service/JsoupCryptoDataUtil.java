@@ -1,7 +1,7 @@
-package com.ccs.blockchain.service;
+package com.ccs.coin.service;
 
-import com.ccs.blockchain.entity.CryptocurrenciesData;
-import com.ccs.blockchain.entity.RateData;
+import com.ccs.coin.entity.CryptocurrenciesData;
+import com.ccs.coin.entity.RateData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;

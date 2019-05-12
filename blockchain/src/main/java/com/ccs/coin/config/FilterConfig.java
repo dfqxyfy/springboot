@@ -1,10 +1,9 @@
-package com.ccs.blockchain.config;
+package com.ccs.coin.config;
 
-import com.ccs.blockchain.config.filter.BasicFilter;
+import com.ccs.coin.config.filter.BasicFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.filter.DelegatingFilterProxy;
 
 import javax.servlet.DispatcherType;
 

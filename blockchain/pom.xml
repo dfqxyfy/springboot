@@ -17,25 +17,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>3.8.1</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.seleniumhq.selenium</groupId>
-                    <artifactId>selenium-api</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-api</artifactId>
-            <version>3.8.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-remote-driver</artifactId>
-            <version>3.8.1</version>
+            <groupId>com.ccs</groupId>
+            <artifactId>entity</artifactId>
+            <version>1.0</version>
         </dependency>
 
         <dependency>
@@ -71,7 +55,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.1.5.RELEASE</version>
                 <configuration>
-                    <mainClass>com.ccs.blockchain.Application</mainClass>
+                    <mainClass>com.ccs.coin.Application</mainClass>
                     <layout>JAR</layout>
                 </configuration>
                 <executions>

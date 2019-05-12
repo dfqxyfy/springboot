@@ -1,4 +1,4 @@
-package com.ccs.blockchain;
+package com.ccs.coin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

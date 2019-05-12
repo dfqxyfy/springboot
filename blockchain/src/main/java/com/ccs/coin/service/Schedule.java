@@ -1,4 +1,4 @@
-package com.ccs.blockchain.service;
+package com.ccs.coin.service;
 
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;

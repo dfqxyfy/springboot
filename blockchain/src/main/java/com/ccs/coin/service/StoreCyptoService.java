@@ -1,8 +1,8 @@
-package com.ccs.blockchain.service;
+package com.ccs.coin.service;
 
 import com.alibaba.fastjson.JSON;
-import com.ccs.blockchain.entity.CryptocurrenciesData;
-import com.ccs.blockchain.entity.RateData;
+import com.ccs.coin.entity.CryptocurrenciesData;
+import com.ccs.coin.entity.RateData;
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;

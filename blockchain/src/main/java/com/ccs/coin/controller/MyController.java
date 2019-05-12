@@ -1,10 +1,7 @@
-package com.ccs.blockchain.controller;
+package com.ccs.coin.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.IOException;
-import java.util.HashMap;
 
 @RestController
 public class MyController {

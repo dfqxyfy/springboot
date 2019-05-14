@@ -55,7 +55,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>1.1.5.RELEASE</version>
                 <configuration>
-                    <mainClass>com.ccs.coin.Application</mainClass>
+                    <mainClass>cn.ccs.coin.Application</mainClass>
                     <layout>JAR</layout>
                 </configuration>
                 <executions>

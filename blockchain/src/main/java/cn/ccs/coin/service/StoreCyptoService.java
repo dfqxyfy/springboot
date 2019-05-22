@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -30,11 +31,15 @@ public class StoreCyptoService {
         JsoupCryptoDataUtil jsoupDataUtil = new JsoupCryptoDataUtil();
         List<CryptocurrenciesData> list = jsoupDataUtil.jsoupSpider();
         //mongoTemplate.insert(cryptocurrenciesData);
+        final Date now = new Date();
         list.forEach(data->{
             Query query = new Query();
+            //data.setUpdateTime(now);
             query.addCriteria(Criteria.where("simpleName").is(data.getSimpleName()));
             String s = JSON.toJSONString(data);
-            Update update = new BasicUpdate(Document.parse(s));
+            final Document parse = Document.parse(s);
+            parse.put("updateTime",now);
+            Update update = new BasicUpdate(parse);
             mongoTemplate.upsert(query,update,CryptocurrenciesData.class);
         });
 
@@ -43,7 +48,9 @@ public class StoreCyptoService {
             Query query = new Query();
             query.addCriteria(Criteria.where("coin").is(rateData.getCoin()));
             String s = JSON.toJSONString(rateData);
-            Update update = new BasicUpdate(Document.parse(s));
+            final Document parse = Document.parse(s);
+            parse.put("updateTime",now);
+            Update update = new BasicUpdate(parse);
             mongoTemplate.upsert(query,update,RateData.class);
         });
 
@@ -56,11 +63,15 @@ public class StoreCyptoService {
         JsoupExchangesDataUtil jsoupExchangesDataUtil = new JsoupExchangesDataUtil();
         List<ExchangesData> list = jsoupExchangesDataUtil.jsoupSpider();
         //mongoTemplate.insert(cryptocurrenciesData);
+        Date now = new Date();
         list.forEach(data->{
+            //data.setUpdateTime(now);
             Query query = new Query();
             query.addCriteria(Criteria.where("name").is(data.getName()));
             String s = JSON.toJSONString(data);
-            Update update = new BasicUpdate(Document.parse(s));
+            final Document parse = Document.parse(s);
+            parse.put("updateTime",now);
+            Update update = new BasicUpdate(parse);
             mongoTemplate.upsert(query,update,ExchangesData.class);
         });
 

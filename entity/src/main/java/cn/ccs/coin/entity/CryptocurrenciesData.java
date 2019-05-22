@@ -3,6 +3,8 @@ package cn.ccs.coin.entity;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Data
 @Document("cryptocurrenciesData")
 public class CryptocurrenciesData {
@@ -19,6 +21,7 @@ public class CryptocurrenciesData {
     private String change24;
     private String priceGraphImg;
 
+    private Date updateTime;
     @Override
     public String toString() {
         return "" +

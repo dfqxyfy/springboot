@@ -3,6 +3,8 @@ package cn.ccs.coin.entity;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
+
 @Data
 @Document("exchangesData")
 public class ExchangesData {
@@ -18,4 +20,5 @@ public class ExchangesData {
     private String volGraph7d;
     private String launched;
 
+    private Date updateTime;
 }

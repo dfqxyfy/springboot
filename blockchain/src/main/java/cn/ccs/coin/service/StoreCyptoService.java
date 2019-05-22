@@ -23,9 +23,9 @@ public class StoreCyptoService {
 
 
     @Autowired
-    MongoTemplate mongoTemplate;
+    private MongoTemplate mongoTemplate;
 
-    @PostConstruct
+    //@PostConstruct
     public void updateCryptocurrencies(){
         JsoupCryptoDataUtil jsoupDataUtil = new JsoupCryptoDataUtil();
         List<CryptocurrenciesData> list = jsoupDataUtil.jsoupSpider();
@@ -51,7 +51,7 @@ public class StoreCyptoService {
     }
 
 
-    @PostConstruct
+    //@PostConstruct
     public void updateExchanges(){
         JsoupExchangesDataUtil jsoupExchangesDataUtil = new JsoupExchangesDataUtil();
         List<ExchangesData> list = jsoupExchangesDataUtil.jsoupSpider();

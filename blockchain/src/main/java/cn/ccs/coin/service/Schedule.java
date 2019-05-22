@@ -1,6 +1,8 @@
 package cn.ccs.coin.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -9,10 +11,13 @@ import javax.annotation.PostConstruct;
 @Component
 public class Schedule {
 
+    @Autowired
+    StoreCyptoService storeCyptoService;
 
 
-    @PostConstruct
+    @Scheduled(cron="0 0/5 * * * ?")
     public void exe(){
-
+        storeCyptoService.updateCryptocurrencies();
+        storeCyptoService.updateExchanges();
     }
 }

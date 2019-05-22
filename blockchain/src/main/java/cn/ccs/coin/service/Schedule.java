@@ -15,7 +15,7 @@ public class Schedule {
     StoreCyptoService storeCyptoService;
 
 
-    @Scheduled(cron="0 0/5 * * * ?")
+    @Scheduled(cron="0 0/1 * * * ?")
     public void exe(){
         storeCyptoService.updateCryptocurrencies();
         storeCyptoService.updateExchanges();

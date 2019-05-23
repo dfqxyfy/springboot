@@ -23,7 +23,7 @@ function deal(htmlobj){
                      <td>${obj.volume24}</td>
                      <td>${obj.circulatingSupply}</td>
                      <td>${obj.change24}</td>
-                     <td>P京津冀</td>
+                     <td></td>
                  </tr>`;
     }
 

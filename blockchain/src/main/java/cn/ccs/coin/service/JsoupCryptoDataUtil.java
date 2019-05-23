@@ -66,7 +66,7 @@ public class JsoupCryptoDataUtil {
         String marketCap = tds.get(2).attr("data-sort");
 
         String price = tds.get(3).attr("data-sort");
-        String volume24 = tds.get(4).attr("data-usd");;
+        String volume24 = tds.get(4).attr("data-sort");;
         String circulatingSupply = tds.get(5).attr("data-sort");
         String change24= tds.get(6).attr("data-sort");
 

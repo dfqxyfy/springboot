@@ -1,4 +1,4 @@
-/*!normalize.css v1.1.3 | MIT License | git.io/normalize */
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display:block
 }
@@ -222,9 +222,9 @@ div.DTFC_LeftFootWrapper table, div.DTFC_RightFootWrapper table {
 div.DTFC_Blocker {
     background-color:white
 }
-/*!* Bootstrap v3.1.1(http://getbootstrap.com) * Copyright 2011-2014 Twitter,Inc. * Licensed under MIT(https://github.com/twbs/bootstrap/blob/master/LICENSE) */
 
-/*!normalize.css v3.0.0 | MIT License | git.io/normalize */
+
+
 html {
     font-family:sans-serif;
     -webkit-text-size-adjust:100%;
@@ -4590,8 +4590,7 @@ button.close {
 }
 @font-face {
     font-family:'Glyphicons Regular';
-    src:url('/static/cloud/fonts/glyphicons-regular.eot');
-    src:url('/static/cloud/fonts/glyphicons-regular.eot?#iefix') format('embedded-opentype'), url('/static/cloud/fonts/glyphicons-regular.woff2') format('woff2'), url('/static/cloud/fonts/glyphicons-regular.woff') format('woff'), url('/static/cloud/fonts/glyphicons-regular.ttf') format('truetype'), url('/static/cloud/fonts/glyphicons-regular.svg#glyphiconsregular') format('svg')
+
 }
 .glyphicons {
     display:inline-block;
@@ -7470,7 +7469,6 @@ hr {
     display:inline-block;
     width:30px;
     height:30px;
-    background:url('/static/cloud/img/loading.svg')
 }
 #highcharts-graph {
     height:620px
@@ -7840,13 +7838,13 @@ hr {
     display:block
 }
 .cmc-logo_color_black {
-    background-image:url("/static/cloud/img/coinmarketcap_1.svg")
+    
 }
 .cmc-logo_color_grey {
-    background-image:url("/static/cloud/img/coinmarketcap_grey_1.svg")
+    
 }
 .night-mode .cmc-logo_color_black, .night-mode .cmc-logo_color_grey {
-    background-image:url("/static/cloud/img/coinmarketcap_white_1.svg")
+    
 }
 .cmc-logo_size_md {
     width:239px;
@@ -7976,16 +7974,14 @@ footer .flex-container {
     margin:0 auto
 }
 .app-store-badge {
-    background:center / contain no-repeat url("/static/cloud/img/app_store_badge_black_1.svg");
     display:block;
     height:40px;
     width:120px
 }
 .night-mode .app-store-badge {
-    background-image:url("/static/cloud/img/app_store_badge_white_1.svg")
+    
 }
 .google-play-badge {
-    background:center / contain no-repeat url("/static/cloud/img/google_play_badge_1.png");
     display:block;
     height:36px;
     width:120px
@@ -9224,13 +9220,13 @@ html {
     width:100%
 }
 .cmc-nav-spotlight--nexo {
-    background-image:url('/static/cloud/img/nexo_ad_orange_1.jpg')
+    
 }
 .cmc-nav-spotlight--according-to-cmc {
-    background-image:url('/static/cloud/img/nav_according_to_cmc_1.png')
+    
 }
 .cmc-nav-spotlight--intro-to-crypto {
-    background-image:url('/static/cloud/img/nav_intro_to_crypto_1.png')
+    
 }
 .cmc-nav-spotlight--mobile {
     margin:0 auto 40px
@@ -9674,102 +9670,7 @@ html {
     background-size:cover;
     background-repeat:no-repeat
 }
-.cmc-flag-au {
-    background-image:url('/static/cloud/img/flags/au.svg')
-}
-.cmc-flag-br {
-    background-image:url('/static/cloud/img/flags/br.svg')
-}
-.cmc-flag-ca {
-    background-image:url('/static/cloud/img/flags/ca.svg')
-}
-.cmc-flag-cl {
-    background-image:url('/static/cloud/img/flags/cl.svg')
-}
-.cmc-flag-cn {
-    background-image:url('/static/cloud/img/flags/cn.svg')
-}
-.cmc-flag-cz {
-    background-image:url('/static/cloud/img/flags/cz.svg')
-}
-.cmc-flag-dk {
-    background-image:url('/static/cloud/img/flags/dk.svg')
-}
-.cmc-flag-eu {
-    background-image:url('/static/cloud/img/flags/eu.svg')
-}
-.cmc-flag-hk {
-    background-image:url('/static/cloud/img/flags/hk.svg')
-}
-.cmc-flag-hu {
-    background-image:url('/static/cloud/img/flags/hu.svg')
-}
-.cmc-flag-in {
-    background-image:url('/static/cloud/img/flags/in.svg')
-}
-.cmc-flag-id {
-    background-image:url('/static/cloud/img/flags/id.svg')
-}
-.cmc-flag-il {
-    background-image:url('/static/cloud/img/flags/il.svg')
-}
-.cmc-flag-jp {
-    background-image:url('/static/cloud/img/flags/jp.svg')
-}
-.cmc-flag-kr {
-    background-image:url('/static/cloud/img/flags/kr.svg')
-}
-.cmc-flag-my {
-    background-image:url('/static/cloud/img/flags/my.svg')
-}
-.cmc-flag-mx {
-    background-image:url('/static/cloud/img/flags/mx.svg')
-}
-.cmc-flag-nz {
-    background-image:url('/static/cloud/img/flags/nz.svg')
-}
-.cmc-flag-no {
-    background-image:url('/static/cloud/img/flags/no.svg')
-}
-.cmc-flag-pk {
-    background-image:url('/static/cloud/img/flags/pk.svg')
-}
-.cmc-flag-ph {
-    background-image:url('/static/cloud/img/flags/ph.svg')
-}
-.cmc-flag-pl {
-    background-image:url('/static/cloud/img/flags/pl.svg')
-}
-.cmc-flag-ru {
-    background-image:url('/static/cloud/img/flags/ru.svg')
-}
-.cmc-flag-sg {
-    background-image:url('/static/cloud/img/flags/sg.svg')
-}
-.cmc-flag-za {
-    background-image:url('/static/cloud/img/flags/za.svg')
-}
-.cmc-flag-se {
-    background-image:url('/static/cloud/img/flags/se.svg')
-}
-.cmc-flag-ch {
-    background-image:url('/static/cloud/img/flags/ch.svg')
-}
-.cmc-flag-tw {
-    background-image:url('/static/cloud/img/flags/tw.svg')
-}
-.cmc-flag-th {
-    background-image:url('/static/cloud/img/flags/th.svg')
-}
-.cmc-flag-tr {
-    background-image:url('/static/cloud/img/flags/tr.svg')
-}
-.cmc-flag-gb {
-    background-image:url('/static/cloud/img/flags/gb.svg')
-}
-.cmc-flag-us {
-    background-image:url('/static/cloud/img/flags/us.svg')
-}
+
 .cmc-nav-mobile {
     display:inherit
 }
@@ -9854,14 +9755,14 @@ th.sortable:hover, th.sorting:hover {
     cursor:pointer
 }
 .sorting_asc {
-    background-image:url('/static/cloud/img/sort_asc.png');
+    
     background-repeat:no-repeat;
     background-position:center left;
     border-left:1px solid #e1e5ea;
     border-right:1px solid #e1e5ea
 }
 .sorting_desc {
-    background-image:url('/static/cloud/img/sort_desc.png');
+    
     background-repeat:no-repeat;
     background-position:center left;
     border-left:1px solid #e1e5ea;
@@ -10664,27 +10565,27 @@ img.sparkline {
     margin:15px 0
 }
 .cmc-crypto-intro__img--chart {
-    background-image:url("/static/cloud/img/crypto_intro/intro_chart_1.png")
+    
 }
 .cmc-crypto-intro__img--currency {
-    background-image:url("/static/cloud/img/crypto_intro/intro_currency_1.png")
+    
 }
 .cmc-crypto-intro__img--curency-filter {
-    background-image:url("/static/cloud/img/crypto_intro/intro_currency_filter_1.png")
+    
 }
 .cmc-crypto-intro__img--exchange {
     height:500px;
-    background-image:url("/static/cloud/img/crypto_intro/intro_exchange_1.png")
+    
 }
 .cmc-crypto-intro__img--markets {
     height:500px;
-    background-image:url("/static/cloud/img/crypto_intro/intro_markets_1.png")
+    
 }
 .cmc-crypto-intro__img--top-currencies {
-    background-image:url("/static/cloud/img/crypto_intro/intro_top_currencies_1.png")
+    
 }
 .cmc-crypto-intro__img--top-exchanges {
-    background-image:url("/static/cloud/img/crypto_intro/intro_top_exchanges_1.png")
+    
 }
 .cmc-crypto-intro-mobile-menu__input-toggle {
     display:none

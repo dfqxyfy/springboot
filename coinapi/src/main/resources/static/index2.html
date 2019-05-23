@@ -1,0 +1,1239 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cryptocurrency Market Capitalizations | CoinMarketCap</title>
+
+    <link href="coin.css" rel='stylesheet'>
+    <link href="header-banner-production.css" rel='stylesheet'>
+    <script src="common/jquery-3.4.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        function getCookie(e) {
+            var n = " " + document.cookie, t = " " + e + "=", i = null, o = 0, u = 0;
+            return n.length > 0 && -1 != (o = n.indexOf(t)) && (o += t.length, -1 == (u = n.indexOf(";", o)) && (u = n.length), i = unescape(n.substring(o, u))), i
+        }
+
+        var DEFAULT_CURRENCY = 'USD';
+        dataLayer = [{
+            'section': 'Market Cap',
+            'subSection': 'Cryptocurrencies',
+            'firstSessionDate': getCookie('gtm_session_first'),
+            'lastSessionDate': getCookie('gtm_session_last'),
+            'language': 'en',
+            'currency': getCookie('currency') || DEFAULT_CURRENCY,
+            'siteTheme': getCookie('theme') || 'day',
+            'siteNav': 'v1'
+        }];
+    </script>
+
+
+    <script>
+        window.lazySizesConfig = {
+            expFactor: 4
+        };
+    </script>
+</head>
+<body>
+
+<!--[if lt IE 7]>
+<![endif]-->
+<script>
+    NightMode.init();
+</script>
+<div class="cmc-nav-wrap">
+    <script>
+        if (getCookie("header-banner-noshow") === "1") {
+            document.getElementById('header-banner-wrapper').style.display = 'none';
+        }
+    </script>
+    <div class="cmc-nav">
+        <div class="cmc-nav__topbar cmc-nav-desktop">
+            <div class="container">
+                <div class="cmc-global-stats visibility-hidden js-global-stats">
+<span>
+Cryptocurrencies:&nbsp;
+<a href="/all/views/all/"><span class="js-global-stats-cryptocurrencies"></span></a>
+</span>
+                    &nbsp;•&nbsp;
+                    <span>
+Markets:&nbsp;
+<a href="/currencies/volume/24-hour/"><span class="js-global-stats-markets"></span></a>
+</span>
+                    &nbsp;•&nbsp;
+                    <span>
+Market Cap:&nbsp;
+<a href="/charts/"><span class="js-global-stats-market-cap" data-global-currency-market-cap></span></a>
+</span>
+                    &nbsp;•&nbsp;
+                    <span>
+24h Vol:&nbsp;
+<a href="/charts/"><span class="js-global-stats-volume" data-global-currency-volume></span></a>
+</span>
+                    &nbsp;•&nbsp;
+                    <span>
+BTC Dominance:&nbsp;
+<a href="/charts/#dominance-percentage"><span class="js-global-stats-btc-dominance"></span>%</a>
+</span>
+                </div>
+                <div class="cmc-siteprefs">
+                    <div class="cmc-siteprefs-control">
+                        <button type="button" class="cmc-nav-button js-theme-switch" title="Day/Night Mode"><span
+                                class="icon-moon"></span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cmc-nav-mobile">
+            <nav class="cmc-nav-mobile-navbar">
+                <div class="container">
+                    <div class="cmc-nav-mobile-hamburger-menu js-nav-mobile-takeover-opener">
+                        <span class="icon-bars"></span>
+                    </div>
+                    <div class="cmc-nav-mobile-logo">
+                        <a href="/" aria-label="Go to the homepage">
+                            <span class="cmc-logo cmc-logo_color_black cmc-navbar__logo"></span>
+                        </a>
+                    </div>
+                    <div class="cmc-search-mobile js-search-mobile-opener">
+                        <span class="icon-search"></span>
+                    </div>
+                </div>
+            </nav>
+            <div class="cmc-nav-mobile-takeover cmc-nav-mobile-takeover-enter js-nav-mobile-takeover">
+                <div class="cmc-nav-mobile-takeover__header">
+                    <div class="cmc-nav-mobile-takeover__logo">
+                        <a href="/" aria-label="Go to the homepage">
+                            <span class="cmc-logo cmc-logo_color_black cmc-navbar__logo"></span>
+                        </a>
+                    </div>
+                    <div class="cmc-nav-mobile-close js-nav-mobile-takeover-closer">
+                        <span class="cmc-nav-mobile-close-icon icon-times"></span>
+                    </div>
+                </div>
+                <ul class="cmc-nav-mobile-takeover__menulist" role="menu">
+                    <li class="cmc-nav-mobile-takeover__menuitem js-nav-mobile-submenu-open" data-menu-id="rankings"
+                        role="menuitem">
+                        <div>Rankings</div>
+                        <div class=""><span class="icon-angle-right"></span></div>
+                    </li>
+                    <li class="cmc-nav-mobile-takeover__menuitem js-nav-mobile-submenu-open" data-menu-id="tools"
+                        role="menuitem">
+                        <div>Tools</div>
+                        <div class=""><span class="icon-angle-right"></span></div>
+                    </li>
+                    <li class="cmc-nav-mobile-takeover__menuitem js-nav-mobile-submenu-open" data-menu-id="resources"
+                        role="menuitem">
+                        <div>Resources</div>
+                        <div class=""><span class="icon-angle-right"></span></div>
+                    </li>
+                    <li class="cmc-nav-mobile-takeover__menuitem js-nav-mobile-submenu-open" data-menu-id="more"
+                        role="menuitem">
+                        <div>Helpful Links</div>
+                        <div class=""><span class="icon-angle-right"></span></div>
+                    </li>
+                    <li class="cmc-nav-mobile-takeover__menuitem" role="menuitem">
+                        <a href="https://blog.coinmarketcap.com" target="_blank" rel="noopener">Blog</a>
+                    </li>
+                </ul>
+                <div class="cmc-nav-mobile-siteprefs">
+                    <div data-global-currency-switch
+                         class="cmc-nav-mobile-siteprefs-control cmc-siteprefs-dropdown global-currency-dropdown-container">
+                        <button type="button" class="cmc-nav-mobile-button dropdown-toggle global-currency-dropdown"
+                                data-toggle="dropdown" title="Change your display currency">
+                            <span data-currency-flag-display></span>&nbsp;<span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu cmc-nav-mobile-siteprefs-dropdown-menu cmc-siteprefs-currency-picker__menu"
+                            role="menu">
+                            <li class="cmc-siteprefs-dropdown-menuitem" data-currency-flag-toggle
+                                data-currency-code="USD">
+<span class="cmc-siteprefs__currency-flag cmc-flag cmc-flag-us">
+</span>
+                                <span>USD</span>
+                            </li>
+                            <li class="cmc-siteprefs-dropdown-menuitem" data-currency-flag-toggle
+                                data-currency-code="AUD">
+<span class="cmc-siteprefs__currency-flag cmc-flag cmc-flag-au">
+</span>
+                                <span>AUD</span>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="cmc-nav-mobile-siteprefs-control cmc-nav-mobile-siteprefs-control--theme">
+                        <button type="button" class="cmc-nav-mobile-button js-theme-switch" title="Day/Night Mode"><span
+                                class="icon-moon"></span></button>
+                    </div>
+                </div>
+                <div class="cmc-nav-mobile-takeover__footer">
+                    <div>
+                        <a class="cmc-link-secondary" href="/disclaimer/">Disclaimer</a>
+                        &nbsp;•&nbsp;
+                        <a class="cmc-link-secondary" href="/request/" target="_blank">Request Form</a>
+                        &nbsp;•&nbsp;
+                        <a class="cmc-link-secondary" href="/terms/">Terms of Use</a>
+                    </div>
+
+                    <hr/>
+                </div>
+            </div>
+            <div class="cmc-nav-mobile-submenu-takeover cmc-nav-mobile-submenu-enter js-nav-mobile-submenu-takeover">
+                <div class="cmc-nav-mobile-submenu__header">
+                    <button class="u-button-reset cmc-nav-mobile-submenu__back-button js-nav-mobile-submenu__back-button">
+                        <span class="icon-angle-left"></span> Back to Main Menu
+                    </button>
+                    <button class="u-button-reset cmc-nav-mobile-close js-nav-mobile-submenu-closer"
+                            title="Exit the navigation menu">
+                        <span class="cmc-nav-mobile-close-icon icon-times"></span>
+                    </button>
+                </div>
+                <div class="cmc-nav-mobile-submenu is-closed js-nav-dropdown-menu" data-menu-id="rankings">
+                    <div class="cmc-nav-mobile-submenu__title">
+                        Rankings
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section cmc-nav-mobile-submenu__section--layout-two-col">
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <h6 class="cmc-nav-mobile-heading">Market Cap</h6>
+                            <ul class="cmc-nav-mobile-menu-list">
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/">All Cryptocurrencies</a></li>
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/coins/">Coins</a></li>
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/tokens/">Tokens</a></li>
+                            </ul>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <h6 class="cmc-nav-mobile-heading">Trends</h6>
+                            <ul class="cmc-nav-mobile-menu-list">
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/gainers-losers/">Gainers &amp;
+                                    Losers</a></li>
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/new/">Recently Added</a></li>
+                            </ul>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <h6 class="cmc-nav-mobile-heading">Cryptocurrencies</h6>
+                            <ul class="cmc-nav-mobile-menu-list">
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/currencies/volume/24-hour/">Daily
+                                    Volume</a></li>
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/currencies/volume/monthly/">Monthly
+                                    Volume</a></li>
+                            </ul>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <h6 class="cmc-nav-mobile-heading">Exchanges</h6>
+                            <ul class="cmc-nav-mobile-menu-list">
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/rankings/exchanges/">Adjusted
+                                    Volume</a></li>
+                                <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/rankings/exchanges/reported/">Reported
+                                    Volume</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--according-to-cmc cmc-nav-spotlight--mobile">
+                            <a class="cmc-nav-spotlight__link js-nav-track-click"
+                               href="https://blog.coinmarketcap.com/2018/11/27/according-to-coinmarketcap-2018-edition/?utm_source=coinmarketcap.com&utm_medium=web&utm_campaign=nav2"
+                               target="_blank" rel="noopener" title="According to CoinMarketCap blog post"
+                               data-linkid="According to CMC - mobile"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cmc-nav-mobile-submenu is-closed js-nav-dropdown-menu" data-menu-id="tools">
+                    <div class="cmc-nav-mobile-submenu__title">
+                        Tools
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section cmc-nav-mobile-submenu__section--layout-two-col">
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/charts/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Global Charts</h6>
+                                <p class="cmc-nav-mobile-desc">Total Market Cap &amp; Dominance Charts</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/converter/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Currency Converter</h6>
+                                <p class="cmc-nav-mobile-desc">Convert prices of thousands of crypto and fiat
+                                    currencies</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/historical/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Historical
+                                    Snapshots</h6>
+                                <p class="cmc-nav-mobile-desc">View crypto rankings from the past</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/widget/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Site Widgets</h6>
+                                <p class="cmc-nav-mobile-desc">Powerful &amp; reliable widgets for your site</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/watchlist/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Watchlist</h6>
+                                <p class="cmc-nav-mobile-desc">Keep an eye on your favorite cryptocurrencies</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem"
+                               href="https://blockchain.coinmarketcap.com?utm_source=coinmarketcap" target="_blank"
+                               rel="noopener">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Blockchain
+                                    Explorer</h6>
+                                <p class="cmc-nav-mobile-desc">Search and visualize blockchain data</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--nexo cmc-nav-spotlight--mobile">
+                            <a class="cmc-nav-spotlight__link"
+                               href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_banner_orange&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                               target="_blank" rel="nofollow noopener"></a>
+                        </div>
+                    </div>
+                    <div class="cmc-navsubmenu__banner cmc-navsubmenu__banner--mobile">
+                        <a class="cmc-link"
+                           href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_bar&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                           target="_blank" rel="nofollow noopener">
+                            <img class="cmc-navsubmenu__banner__logo cmc-navsubmenu__banner__logo--mobile"
+                                 src="https://s2.coinmarketcap.com/static/cloud/img/nexo_logo_1.svg" alt="Nexo"/>
+                            <br/>
+                            Instant Access to Cash Without Selling Your Crypto
+                        </a>
+                    </div>
+                </div>
+                <div class="cmc-nav-mobile-submenu is-closed js-nav-dropdown-menu" data-menu-id="resources">
+                    <div class="cmc-nav-mobile-submenu__title">
+                        Resources
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section cmc-nav-mobile-submenu__section--layout-two-col">
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/api/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Crypto API</h6>
+                                <p class="cmc-nav-mobile-desc">A powerful &amp; flexible market data API for commercial
+                                    &amp; personal use</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/newsletter/" target="_blank" rel="noopener">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Newsletter</h6>
+                                <p class="cmc-nav-mobile-desc">Articles &amp; interviews for the crypto &amp; blockchain
+                                    community</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/events/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Events Calendar</h6>
+                                <p class="cmc-nav-mobile-desc">A full list of crypto &amp; blockchain events from around
+                                    the world</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/indices/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Crypto Indices</h6>
+                                <p class="cmc-nav-mobile-desc">The most comprehensive suite of institutional grade
+                                    indices in the market</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/glossary/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Crypto Glossary</h6>
+                                <p class="cmc-nav-mobile-desc">Learn the terms, slang and definitions around the crypto
+                                    space</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/intro-to-crypto/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Intro to Crypto</h6>
+                                <p class="cmc-nav-mobile-desc">Learn about the world of cryptocurrencies with our
+                                    introductory guide</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--nexo cmc-nav-spotlight--mobile">
+                            <a class="cmc-nav-spotlight__link"
+                               href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_banner_orange&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                               target="_blank" rel="nofollow noopener"></a>
+                        </div>
+                    </div>
+                    <div class="cmc-navsubmenu__banner cmc-navsubmenu__banner--mobile">
+                        <a class="cmc-link"
+                           href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_bar&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                           target="_blank" rel="nofollow noopener">
+                            <img class="cmc-navsubmenu__banner__logo cmc-navsubmenu__banner__logo--mobile"
+                                 src="https://s2.coinmarketcap.com/static/cloud/img/nexo_logo_1.svg" alt="Nexo"/>
+                            <br/>
+                            Instant Access to Cash Without Selling Your Crypto
+                        </a>
+                    </div>
+                </div>
+                <div class="cmc-nav-mobile-submenu is-closed js-nav-dropdown-menu" data-menu-id="more">
+                    <div class="cmc-nav-mobile-submenu__title">
+                        Helpful Links
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section cmc-nav-mobile-submenu__section--layout-two-col">
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/methodology/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Methodology</h6>
+                                <p class="cmc-nav-mobile-desc">How CoinMarketCap analyzes data to offer up-to-the-minute
+                                    updates</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/careers/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Careers</h6>
+                                <p class="cmc-nav-mobile-desc">Discover your next career! Build the future of crypto
+                                    data with us</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/faq/">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">FAQ</h6>
+                                <p class="cmc-nav-mobile-desc">Need help? Check our FAQ, with questions we are most
+                                    commonly asked</p>
+                            </a>
+                        </div>
+                        <div class="cmc-nav-mobile-submenu__item">
+                            <a class="cmc-nav-link--menuitem"
+                               href="https://shop.coinmarketcap.com?utm_source=coinmarketcap" target="_blank"
+                               rel="noopener">
+                                <h6 class="cmc-nav-mobile-heading cmc-nav-link--menuitem__arrow">Shop</h6>
+                                <p class="cmc-nav-mobile-desc">Purchase exclusive CoinMarketCap apparel!</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cmc-nav-mobile-submenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--intro-to-crypto cmc-nav-spotlight--mobile">
+                            <a class="cmc-nav-spotlight__link js-nav-track-click" href="/intro-to-crypto/"
+                               target="_blank" title="Intro to Crypto Guide" data-linkid="Intro to CMC - mobile"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cmc-search-mobile-takeover js-search-mobile-takeover">
+                <div class="cmc-search-mobile-bar">
+                    <div class="cmc-quick-search cmc-quick-search--mobile">
+                        <form action="/search/" role="search">
+                            <input type="text" class="cmc-search-mobile__input js-quick-search js-search-mobile__input"
+                                   placeholder="Search" name="q" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="cmc-search-mobile-closer js-search-mobile-closer">
+                        <button class="cmc-search-mobile-closer__button" type="button">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cmc-nav-mobile__topbar js-global-stats-mobile__container">
+                <div class="container cmc-global-stats__container">
+                    <div class="cmc-global-stats__fade"></div>
+                    <div class="cmc-global-stats__content">
+                        <div class="cmc-global-stats cmc-global-stats__inner-content visibility-hidden js-global-stats js-global-stats-mobile">
+<span>
+Market Cap:&nbsp;
+<a href="/charts/"><span class="js-global-stats-market-cap" data-global-currency-market-cap></span></a>
+</span>
+                            &nbsp;•&nbsp;
+                            <span>
+24h Vol:&nbsp;
+<a href="/charts/"><span class="js-global-stats-volume" data-global-currency-volume></span></a>
+</span>
+                            &nbsp;•&nbsp;
+                            <span>
+BTC Dominance:&nbsp;
+<a href="/charts/#dominance-percentage"><span class="js-global-stats-btc-dominance"></span>%</a>
+</span>
+                            &nbsp;•&nbsp;
+                            <span>
+Cryptocurrencies:&nbsp;
+<a href="/all/views/all/"><span class="js-global-stats-cryptocurrencies"></span></a>
+</span>
+                            &nbsp;•&nbsp;
+                            <span>
+Markets:&nbsp;
+<a href="/currencies/volume/24-hour/"><span class="js-global-stats-markets"></span></a>
+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="cmc-navbar cmc-nav-desktop js-navbar">
+            <div class="container">
+                <div>
+                    <a href="/" title="Go to homepage">
+                        <span class="cmc-logo cmc-logo_color_black cmc-navbar__logo"></span>
+                    </a>
+                </div>
+                <ul class="cmc-navbar__menu" role="menu">
+                    <li class="cmc-navbar__menuitem js-nav-dropdown-open" data-menu-id="rankings" role="menuitem">
+                        <div>Rankings</div>
+                        <div class="cmc-nav-caret"><span class="icon-caret-down"></span></div>
+                    </li>
+                    <li class="cmc-navbar__menuitem js-nav-dropdown-open" data-menu-id="tools" role="menuitem">
+                        <div>Tools</div>
+                        <div class="cmc-nav-caret"><span class="icon-caret-down"></span></div>
+                    </li>
+                    <li class="cmc-navbar__menuitem js-nav-dropdown-open" data-menu-id="resources" role="menuitem">
+                        <div>Resources</div>
+                        <div class="cmc-nav-caret"><span class="icon-caret-down"></span></div>
+                    </li>
+                    <li class="cmc-navbar__menuitem" role="menuitem">
+                        <a href="https://blog.coinmarketcap.com" target="_blank" rel="noopener">Blog</a>
+                    </li>
+                    <li class="cmc-navbar__menuitem js-nav-dropdown-open" data-menu-id="more" role="menuitem">
+                        <div><span class="icon-ellipsis-h cmc-navbar-ellipsis"></span></div>
+                        <div class="cmc-nav-caret"><span class="icon-caret-down"></span></div>
+                    </li>
+                </ul>
+                <div class="cmc-quick-search js-nav-search">
+                    <form action="/search/" role="search">
+                        <div class="has-feedback">
+                            <input type="text" class="cmc-quick-search__input js-quick-search js-nav-search-input"
+                                   placeholder="Search" name="q" aria-label="Search">
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="clearfix"></div>
+        <div class="cmc-nav-dropdown cmc-nav-dropdown-enter cmc-nav-desktop js-nav-dropdown">
+            <div class="cmc-navsubmenu is-closed js-nav-dropdown-menu" data-menu-id="rankings">
+                <div class="cmc-navsubmenu__content cmc-navsubmenu__content--size-sm">
+                    <div class="cmc-navsubmenu__section cmc-navsubmenu__section--layout-two-col-sm">
+                        <div class="w-100">
+                            <div class="cmc-navsubmenu__item">
+                                <h6 class="cmc-nav-heading">Market Cap</h6>
+                                <ul class="cmc-nav-menu-list">
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/">All Cryptocurrencies</a>
+                                    </li>
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/coins/">Coins</a></li>
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/tokens/">Tokens</a></li>
+                                </ul>
+                            </div>
+                            <div class="cmc-navsubmenu__item">
+                                <h6 class="cmc-nav-heading">Trends</h6>
+                                <ul class="cmc-nav-menu-list">
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/gainers-losers/">Gainers
+                                        &amp; Losers</a></li>
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/new/">Recently Added</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="w-100">
+                            <div class="cmc-navsubmenu__item">
+                                <h6 class="cmc-nav-heading">Cryptocurrencies</h6>
+                                <ul class="cmc-nav-menu-list">
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/currencies/volume/24-hour/">Daily
+                                        Volume</a></li>
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/currencies/volume/monthly/">Monthly
+                                        Volume</a></li>
+                                </ul>
+                            </div>
+                            <div class="cmc-navsubmenu__item">
+                                <h6 class="cmc-nav-heading">Exchanges</h6>
+                                <ul class="cmc-nav-menu-list">
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow" href="/rankings/exchanges/">Adjusted
+                                        Volume</a></li>
+                                    <li><a class="cmc-nav-link cmc-nav-link--arrow"
+                                           href="/rankings/exchanges/reported/">Reported Volume</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cmc-navsubmenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--according-to-cmc">
+                            <a class="cmc-nav-spotlight__link js-nav-track-click"
+                               href="https://blog.coinmarketcap.com/2018/11/27/according-to-coinmarketcap-2018-edition/?utm_source=coinmarketcap.com&utm_medium=web&utm_campaign=nav2"
+                               target="_blank" rel="noopener" title="According to CoinMarketCap blog post"
+                               data-linkid="According to CMC - desktop"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cmc-navsubmenu is-closed js-nav-dropdown-menu" data-menu-id="tools">
+                <div class="cmc-navsubmenu__content">
+                    <div class="cmc-navsubmenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--nexo">
+                            <a class="cmc-nav-spotlight__link"
+                               href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_banner_orange&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                               target="_blank" rel="nofollow noopener"></a>
+                        </div>
+                    </div>
+                    <div class="cmc-navsubmenu__section cmc-navsubmenu__section--layout-three-col">
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/charts/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Global Charts</h6>
+                                <p class="cmc-nav-desc">Total Market Cap &amp; Dominance Charts</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/converter/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Currency Converter</h6>
+                                <p class="cmc-nav-desc">Convert prices of thousands of crypto and fiat currencies</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/historical/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Historical Snapshots</h6>
+                                <p class="cmc-nav-desc">View crypto rankings from the past</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/widget/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Site Widgets</h6>
+                                <p class="cmc-nav-desc">Powerful &amp; reliable widgets for your site</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/watchlist/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Watchlist</h6>
+                                <p class="cmc-nav-desc">Keep an eye on your favorite cryptocurrencies</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem"
+                               href="https://blockchain.coinmarketcap.com?utm_source=coinmarketcap" target="_blank"
+                               rel="noopener">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Blockchain Explorer</h6>
+                                <p class="cmc-nav-desc">Search and visualize blockchain data</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cmc-navsubmenu__banner">
+                    <a class="cmc-link"
+                       href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_bar&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                       target="_blank" rel="nofollow noopener"><img class="cmc-navsubmenu__banner__logo"
+                                                                    src="https://s2.coinmarketcap.com/static/cloud/img/nexo_logo_1.svg"
+                                                                    alt="Nexo"/> &ensp; Instant Access to Cash Without
+                        Selling Your Crypto</a>
+                </div>
+            </div>
+            <div class="cmc-navsubmenu is-closed js-nav-dropdown-menu" data-menu-id="resources">
+                <div class="cmc-navsubmenu__content">
+                    <div class="cmc-navsubmenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--nexo">
+                            <a class="cmc-nav-spotlight__link"
+                               href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_banner_orange&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                               target="_blank" rel="nofollow noopener"></a>
+                        </div>
+                    </div>
+                    <div class="cmc-navsubmenu__section cmc-navsubmenu__section--layout-three-col">
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/api/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Crypto API</h6>
+                                <p class="cmc-nav-desc">A powerful &amp; flexible market data API for commercial &amp;
+                                    personal use</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/newsletter/" target="_blank" rel="noopener">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Newsletter</h6>
+                                <p class="cmc-nav-desc">Articles &amp; interviews for the crypto &amp; blockchain
+                                    community</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/events/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Events Calendar</h6>
+                                <p class="cmc-nav-desc">A full list of crypto &amp; blockchain events from around the
+                                    world</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/indices/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Crypto Indices</h6>
+                                <p class="cmc-nav-desc">The most comprehensive suite of institutional grade indices in
+                                    the market</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/glossary/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Crypto Glossary</h6>
+                                <p class="cmc-nav-desc">Learn the terms, slang and definitions around the crypto
+                                    space</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/intro-to-crypto/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Intro to Crypto</h6>
+                                <p class="cmc-nav-desc">Learn about the world of cryptocurrencies with our introductory
+                                    guide</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cmc-navsubmenu__banner">
+                    <a class="cmc-link"
+                       href="https://nexo.io/instant-crypto-credit-line/?utm_source=coinmarketcap&utm_medium=fixed&utm_term=dropdown_bar&utm_content=web_integration&utm_campaign=nexoeverywhere"
+                       target="_blank" rel="nofollow noopener"><img class="cmc-navsubmenu__banner__logo"
+                                                                    src="https://s2.coinmarketcap.com/static/cloud/img/nexo_logo_1.svg"
+                                                                    alt="Nexo"/> &ensp; Instant Access to Cash Without
+                        Selling Your Crypto</a>
+                </div>
+            </div>
+            <div class="cmc-navsubmenu is-closed js-nav-dropdown-menu" data-menu-id="more">
+                <div class="cmc-navsubmenu__content">
+                    <div class="cmc-navsubmenu__section">
+                        <div class="cmc-nav-spotlight cmc-nav-spotlight--intro-to-crypto">
+                            <a class="cmc-nav-spotlight__link js-nav-track-click" href="/intro-to-crypto/"
+                               target="_blank" title="Intro to Crypto Guide"
+                               data-linkid="Intro to Crypto - desktop"></a>
+                        </div>
+                    </div>
+                    <div class="cmc-navsubmenu__section cmc-navsubmenu__section--layout-three-col">
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/methodology/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Methodology</h6>
+                                <p class="cmc-nav-desc">How CoinMarketCap analyzes data to offer up-to-the-minute
+                                    updates</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/careers/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Careers</h6>
+                                <p class="cmc-nav-desc">Discover your next career! Build the future of crypto data with
+                                    us</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem" href="/faq/">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">FAQ</h6>
+                                <p class="cmc-nav-desc">Need help? Check our FAQ, with questions we are most commonly
+                                    asked</p>
+                            </a>
+                        </div>
+                        <div class="cmc-navsubmenu__item">
+                            <a class="cmc-nav-link--menuitem"
+                               href="https://shop.coinmarketcap.com?utm_source=coinmarketcap" target="_blank"
+                               rel="noopener">
+                                <h6 class="cmc-nav-heading cmc-nav-link--menuitem__arrow">Shop</h6>
+                                <p class="cmc-nav-desc">Purchase exclusive CoinMarketCap apparel!</p>
+                            </a>
+                        </div>
+                        <hr>
+                        <div class="cmc-navsubmenu__item cmc-navsubmenu__item--two-col cmc-nav-footer-links">
+                            <div>
+                                <a class="cmc-link-secondary" href="/disclaimer/">Disclaimer</a>
+                                &nbsp;•&nbsp;
+                                <a class="cmc-link-secondary" href="/request/" target="_blank">Request Form</a>
+                                &nbsp;•&nbsp;
+                                <a class="cmc-link-secondary" href="/terms/">Terms of Use</a>
+                            </div>
+                            <div>
+                                <a class="cmc-link-secondary" href="/privacy/">Privacy Policy</a>
+                                &nbsp;•&nbsp;
+                                <a class="cmc-link-secondary js-nav-track-click" href="/advertising/" target="_blank"
+                                   data-linkid="Advertise - more">Advertise</a>
+                            </div>
+                        </div>
+                        <div class="cmc-navsubmenu__item cmc-navsubmenu__item--two-col cmc-nav-social-links">
+                            <ul class="cmc-list-inline">
+                                <li><a href="https://twitter.com/CoinMarketCap" target="_blank" rel="noopener"
+                                       title="Twitter"><span class="icon-twitter cmc-nav-social-icon"></span></a></li>
+                                <li><a href="https://www.facebook.com/CoinMarketCap" target="_blank" rel="noopener"
+                                       title="Facebook"><span class="icon-facebook cmc-nav-social-icon"></span></a></li>
+                                <li><a href="https://t.me/CoinMarketCap" target="_blank" rel="nofollow noopener"
+                                       title="Telegram"><span class="icon-telegram cmc-nav-social-icon"></span></a></li>
+                                <li><a href="https://www.linkedin.com/company/coinmarketcap/" target="_blank"
+                                       rel="nofollow noopener" title="LinkedIn"><span
+                                        class="icon-linkedin cmc-nav-social-icon"></span></a></li>
+                                <li><a href="https://www.instagram.com/coinmarketcap/" target="_blank"
+                                       rel="nofollow noopener" title="Instagram"><span
+                                        class="icon-instagram cmc-nav-social-icon"></span></a></li>
+                                <li><a href="https://www.reddit.com/r/CoinMarketCap" target="_blank"
+                                       rel="nofollow noopener" title="Reddit"><span
+                                        class="icon-reddit cmc-nav-social-icon"></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cmc-nav-close js-nav-dropdown-close">
+                <span class="cmc-nav-close-icon icon-times"></span>&nbsp;&thinsp;Close
+            </div>
+        </div>
+        <div class="cmc-overlay is-closed js-overlay"></div>
+    </div>
+</div>
+<div class="container main-section">
+    <div class="row">
+        <div class="col-xl-10 padding-top-1x">
+            <div id="leaderboard" class="text-center">
+
+
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="header header-1x">
+                        <h1 class="text-center h2">
+                            Top 100 Cryptocurrencies by Market Capitalization
+                        </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottom-margin-1x">
+                <div class="col-xs-12">
+                    <div>
+                        <div class="pull-right margin-bottom--lv1">
+                            <div class="pull-left">
+                                <div id="currency-switch" class="btn-group">
+                                    <button id="currency-switch-button" type="button"
+                                            class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        USD <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="pointer price-toggle" data-fiat-item data-currency="usd" data-fiat>
+                                            USD</a></li>
+                                        <li class="pointer price-toggle" data-currency="usd">USD</a></li>
+                                        <li class="pointer price-toggle" data-currency="btc" data-currencyid="bitcoin">
+                                            BTC</a></li>
+                                        <li class="pointer price-toggle" data-currency="eth" data-currencyid="ethereum">
+                                            ETH</a></li>
+                                        <li class="pointer price-toggle" data-currency="xrp" data-currencyid="ripple">
+                                            XRP</a></li>
+                                        <li class="pointer price-toggle" data-currency="bch"
+                                            data-currencyid="bitcoin-cash">BCH</a></li>
+                                        <li class="pointer price-toggle" data-currency="ltc" data-currencyid="litecoin">
+                                            LTC</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <ul class="pull-left margin-left--lv1 pagination top-paginator">
+                                <li><a href="2">Next 100 &rarr;</a></li>
+                                <li>
+                                    <a href="/all/views/all/">View All</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pull-left">
+                            <ul id="category-tabs" class="nav nav-tabs text-left no-border-bottom" role="tablist">
+                                <li class="visible-xs active">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Rankings <span
+                                            class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="section-heading">All Cryptocurrencies</li>
+                                        <li><a href="/">Top 100</a></li>
+                                        <li><a href="/all/views/all/">Full List</a></li>
+                                        <li class="section-heading">Coins Only</li>
+                                        <li><a href="/coins/">Top 100</a></li>
+                                        <li><a href="/coins/views/all/">Full List</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="/coins/">Market Cap by Circulating Supply</a></li>
+                                        <li><a href="/coins/views/market-cap-by-total-supply/">Market Cap by Total
+                                            Supply</a></li>
+                                        <li><a href="/coins/views/filter-non-mineable/">Filter Non-Mineable</a></li>
+                                        <li class="section-heading">Tokens Only</li>
+                                        <li><a href="/tokens/">Top 100</a></li>
+                                        <li><a href="/tokens/views/all/">Full List</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="/tokens/">Market Cap by Circulating Supply</a></li>
+                                        <li><a href="/tokens/views/market-cap-by-total-supply/">Market Cap by Total
+                                            Supply</a></li>
+                                        <li class="section-heading visible-xs">Exchanges</li>
+                                        <li class="visible-xs"><a href="/rankings/exchanges/">Top 100 By Adjusted
+                                            Volume</a></li>
+                                        <li class="visible-xs"><a href="/rankings/exchanges/reported/">Top 100 By
+                                            Reported Volume</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hidden-xs active">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cryptocurrencies <!--<span class="caret"></span>--></a>
+                                </li>
+                                <li class="hidden-xs ">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Exchanges </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="table-fixed-column-mobile compact-name-column">
+                        <table class="table floating-header " id="currencies">
+                            <thead>
+                            <tr>
+                                <th class="col-rank text-center sortable">#</th>
+                                <th id="th-name" class="sortable">Name</th>
+                                <th id="th-marketcap" class="sortable text-right" data-mobile-text="M. Cap">Market Cap
+                                </th>
+                                <th id="th-price" class="sortable text-right">Price</th>
+                                <th id="th-volume" class="sortable text-right" data-mobile-text="Volume">Volume (24h)
+                                </th>
+                                <th id="th-totalsupply" class="sortable text-right"
+                                    title="The number of coins in existence available to the public"
+                                    data-mobile-text="Supply">Circulating Supply
+                                </th>
+                                <th id="th-change" class="sortable text-right" data-mobile-text="Change">Change (24h)
+                                </th>
+                                <th id="th-marketcap-graph" class="text-right">Price Graph (7d)</th>
+                                <th id="th-more-options"></th>
+                            </tr>
+                            </thead>
+                            <tbody id="cryptocurrencies_data">
+                            <tr id="id-bitcoin" class="">
+                                <td class="text-center">
+                                    1
+                                </td>
+                                <td class="no-wrap currency-name" data-sort="Bitcoin">
+                                    <img src="https://s2.coinmarketcap.com/static/img/coins/32x32/1.png"
+                                         class="logo-sprite" alt="Bitcoin" height="16" width="16">
+                                    <span class="currency-symbol visible-xs"><a class="link-secondary"
+                                                                                href="/currencies/bitcoin/">BTC</a></span>
+                                    <br class="visible-xs">
+                                    <a class="currency-name-container link-secondary" href="/currencies/bitcoin/">Bitcoin</a>
+                                </td>
+                                <td class="no-wrap market-cap text-right" data-usd="1.1135152049e+11"
+                                    data-btc="17692075.0" data-sort="1.1135152049e+11">
+                                    $111,351,520,490
+                                </td>
+                                <td class="no-wrap text-right" data-sort="6293.86437092">
+                                    <a href="/currencies/bitcoin/#markets" class="price" data-usd="6293.86437092"
+                                       data-btc="1.0">$6293.86</a>
+                                </td>
+                                <td class="no-wrap text-right" data-sort="18078435975.1">
+                                    <a href="/currencies/bitcoin/#markets" class="volume" data-usd="18078435975.1"
+                                       data-btc="2877589.35881">$18,078,435,975</a>
+                                </td>
+                                <td class="no-wrap text-right circulating-supply" data-sort="17692075.0">
+<span data-supply="17692075.0">
+<span data-supply-container>17,692,075</span>
+<span class="hidden-xs">BTC</span>
+</span>
+                                </td>
+                                <td class="no-wrap percent-change  positive_change  text-right" data-timespan="24h"
+                                    data-percentusd="3.23534" data-symbol="BTC" data-sort="3.23534">3.24%
+                                </td>
+                                <td><a href="/currencies/bitcoin/#charts">
+                                    <img class="sparkline" alt="sparkline"
+                                         src="https://s2.coinmarketcap.com/generated/sparklines/web/7d/usd/1.png">
+                                </a></td>
+                                <td class="dropdown" data-more-options data-cc-id="1" data-cc-slug="bitcoin">
+                                    <button class="btn btn-transparent dropdown-toggle" type="button"
+                                            id="dropdown-menu-1" data-toggle="dropdown">
+                                        <span class="glyphicons glyphicons-more text-gray"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu"
+                                        aria-labelledby="dropdown-menu-1">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                                   data-watchlist-add>Add to Watchlist</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#"
+                                                                   data-watchlist-remove>Remove from Watchlist</a></li>
+                                        <li class="disabled" role="presentation"><a role="menuitem" tabindex="-1"
+                                                                                    href="#" data-watchlist-full>Watchlist
+                                            full!</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                                   href="/currencies/bitcoin/#charts">View Chart</a>
+                                        </li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                                   href="/currencies/bitcoin/#markets">View Markets</a>
+                                        </li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                                   href="/currencies/bitcoin/historical-data/">View
+                                            Historical Data</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pull-right">
+                        <ul class="pagination bottom-paginator">
+                            <li><a href="2">Next 100 &rarr;</a></li>
+                            <li>
+                                <a href="/all/views/all/">View All</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="asterisks">* Not Mineable</div>
+                </div>
+            </div>
+            <div class="row text-center h3 margin-bottom--lv2">
+                <strong>Total Market Cap: <span id="total-marketcap" class="market-cap" data-usd="1.92260278599e+11"
+                                                data-btc="30571801.5558">$192,260,278,599
+</span></strong>
+            </div>
+            <div class="text-center text-gray">
+                Last updated: May 10, 2019 7:16 AM UTC
+            </div>
+
+
+            <div class="modal fade" id="donate_btc" tabindex="-1" role="dialog" aria-labelledby="donate_btc_label"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="donate_btc_label">Donate Bitcoin</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <strong>3CMCRgEm8HVz3DrWaCCid3vAANE42jcEv9</strong> <br/> <img
+                                src="https://s2.coinmarketcap.com/static/cloud/img/qrcodes/donate_bitcoin.png"
+                                alt="Donate Bitcoin"><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="donate_ltc" tabindex="-1" role="dialog" aria-labelledby="donate_ltc_label"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="donate_ltc_label">Donate Litecoin</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <strong>LTdsVS8VDw6syvfQADdhf2PHAm3rMGJvPX</strong> <br/> <img
+                                src="https://s2.coinmarketcap.com/static/cloud/img/qrcodes/donate_litecoin.png"
+                                alt="Donate Litecoin"><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="donate_eth" tabindex="-1" role="dialog" aria-labelledby="donate_eth_label"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="donate_eth_label">Donate Ethereum</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <strong>0x0074709077B8AE5a245E4ED161C971Dc4c3C8E2B</strong> <br/> <img
+                                src=""
+                                alt="Donate Ethereum"><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="donate_bch" tabindex="-1" role="dialog" aria-labelledby="donate_bch_label"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header text-center">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="donate_bch_label">Donate Bitcoin Cash</h4>
+                        </div>
+                        <div class="modal-body text-center">
+                            <strong>1LVXG4Z4oF6TrJfmUfSuLX8nqb8c5eCwha</strong> <br/> <img
+                                src="https://s2.coinmarketcap.com/static/cloud/img/qrcodes/donate_bitcoin_cash.png"
+                                alt="Donate Bitcoin Cash"><br/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-2 padding-top-2x">
+            <div class="pull-right visible-xl">
+
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+<div class="banner-alert banner-alert-fixed-bottom hide js-cookie-policy-banner">
+    <div class="banner-alert-close">
+        <button type="button" class="banner-alert-close-button js-close" aria-label="Close"><span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="banner-alert-body">
+        We use cookies to offer you a better browsing experience, analyze site traffic, personalize content, and serve
+        targeted advertisements. Read about how we use cookies and how you can control them on our <a href="/privacy/">Privacy
+        Policy</a>. If you continue to use this site, you consent to our use of cookies.
+    </div>
+</div>
+<div id="currency-exchange-rates" data-pkr="0.00706581363077" data-all="0.00909752547307" data-ron="0.235889224533"
+     data-mnt="0.000407539480387" data-ugx="0.000265265489855" data-ttd="0.147561988209" data-aud="0.699952683199"
+     data-cup="0.0388349514563" data-ngn="0.00278450700304" data-byn="0.475284041625" data-gtq="0.130525077587"
+     data-hrk="0.151595543091" data-clp="0.0014577379728" data-eur="1.12298858707" data-nok="0.114175323059"
+     data-amd="0.00207997430916" data-mxn="0.0520875111858" data-gel="0.364298724954" data-try="0.163840875775"
+     data-crc="0.00168479122668" data-aed="0.272245299549" data-gbp="1.30201721527" data-bam="0.573609269985"
+     data-ars="0.0221092195446" data-mdl="0.055814718799" data-btc="6293.86437092" data-sek="0.103755998264"
+     data-mur="0.0285793646527" data-irr="2.37501484384e-05" data-cny="0.147009099863" data-bdt="0.0118638202847"
+     data-pen="0.301590255257" data-kzt="0.00263844344122" data-rub="0.0153496653773" data-omr="2.59775346281"
+     data-mkd="0.0182272082386" data-jod="1.41143260409" data-mmk="0.000655947095705" data-pln="0.261342253816"
+     data-kes="0.00988630746416" data-hkd="0.127416940082" data-ves="0.000192604479662" data-cop="0.000304678891522"
+     data-dzd="0.0083826572378" data-idr="6.97605469227e-05" data-krw="0.000850376291509" data-bgn="0.574099610875"
+     data-isk="0.00818430210263" data-ils="0.28021408356" data-bob="0.144688569429" data-dkk="0.150415364508"
+     data-twd="0.0323093738863" data-kwd="3.28722453058" data-brl="0.253375596383" data-zar="0.0701686088519"
+     data-sgd="0.73408719194" data-uzs="0.000118648128483" data-usd="1.0" data-chf="0.985534327146"
+     data-xau="1284.96716909" data-xpd="1306.95036203" data-xag="14.7964737636" data-huf="0.00346752661327"
+     data-bmd="1.0" data-rsd="0.00951586712797" data-jmd="0.00742806772493" data-azn="0.587371512482"
+     data-uah="0.0382350355813" data-lkr="0.00569930468483" data-tnd="0.332645533252" data-nzd="0.659413122321"
+     data-iqd="0.000840230489238" data-xpt="858.988455195" data-cad="0.742932115321" data-lbp="0.000663315875227"
+     data-khr="0.000247209764402" data-myr="0.240644928408" data-bhd="2.65239325443" data-inr="0.0143204963163"
+     data-jpy="0.00910592526166" data-czk="0.0436413504938" data-sar="0.266647894655" data-ltc="76.8208694201"
+     data-nad="0.0696138090407" data-qar="0.27464989691" data-pab="1.0" data-xrp="0.299915820249"
+     data-vnd="4.28819975521e-05" data-uyu="0.0286372828671" data-nio="0.0304837434769" data-kgs="0.014554376643"
+     data-ssp="0.00767675340886" data-mad="0.103731211684" data-php="0.0191907270407" data-eth="174.05410915"
+     data-npr="0.00894349884682" data-bch="290.169834257" data-ghs="0.193709891156" data-egp="0.0584146270226"
+     data-hnl="0.0410097317734" data-dop="0.0198110230474" data-thb="0.0316315556399"></div>
+<div id="percentage_gains_data" data-bch1h="-0.0113466" data-eth1h="0.103981" data-xrp7d="-2.20301"
+     data-btc1h="0.347117" data-bch7d="3.51343" data-xrp24h="-0.123869" data-ltc7d="0.517662" data-xrp1h="-0.0388298"
+     data-bch24h="1.028" data-ltc24h="2.9535" data-eth24h="1.82869" data-ltc1h="0.314384" data-btc24h="3.23534"
+     data-btc7d="10.9166" data-eth7d="5.37775"></div>
+<div class="scroll-to-top">
+    <button class="btn"><span class="glyphicons glyphicons-chevron-up"></span></button>
+</div>
+<script>
+    var LANG_CODE = 'en';
+    var STATIC_DOMAIN = './';
+    var CURRENCY_FLAGS = {
+        'USD': 'us',
+        'AUD': 'au',
+
+    };
+</script>
+<script>
+    const PHRASES = {
+        emptyTable: "No data available in table",
+        zeroRecords: "No matching records found",
+        sortAscending: ": activate to sort column ascending",
+        sortDescending: ": activate to sort column descending",
+        'K': "K",
+        'M': "M",
+        'B': "B",
+        'T': "T"
+    };
+    var polyglot = new Polyglot({phrases: PHRASES});
+
+    var watchlistStore = WatchlistStore();
+    var watchlistActions = $.map($('[data-more-options]'), function (elem) {
+        return new WatchlistAction({
+            element: elem,
+            watchlistStore: watchlistStore,
+            watchlistIsFull: watchlistStore.isFull()
+        });
+    });
+    $(document).on(watchlistStore.WATCHLIST_AT_CAPACITY, function (event) {
+        for (var i = 0; i < watchlistActions.length; i++) {
+            watchlistActions[i].render({watchlistIsFull: true});
+        }
+    });
+    $(document).on(watchlistStore.WATCHLIST_UNDER_CAPACITY, function (event) {
+        for (var i = 0; i < watchlistActions.length; i++) {
+            watchlistActions[i].render({watchlistIsFull: false});
+        }
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        // GTM Session Set
+        var maxExpire = new Date('2038-01-19 00:00:00');
+        if (Cookies.get("gtm_session_first") === undefined) {
+            Cookies.set("gtm_session_first", new Date(), {expires: maxExpire})
+        }
+
+        Cookies.set("gtm_session_last", new Date(), {expires: maxExpire})
+
+        // Header Banner Prefs
+        $(".header-banner-close").on('click', function () {
+            Cookies.set("header-banner-noshow", "1", {expires: 1})
+            $('#header-banner-wrapper').fadeOut();
+            dataLayer.push({
+                'event': 'customEvent',
+                'eventCategory': 'Header Banner',
+                'eventAction': 'Close',
+            });
+        });
+
+    });
+
+    (function () {
+        NavMenu();
+
+        var polyglot = new Polyglot({
+            phrases: {
+                cryptocurrencies: "Cryptocurrencies",
+                exchanges: "Exchanges"
+            }
+        });
+
+        initQuickSearch({
+            currencyDataURL: 'https://' + STATIC_DOMAIN + '/generated/search/quick_search.json',
+            exchangeDataURL: 'https://' + STATIC_DOMAIN + '/generated/search/quick_search_exchanges.json',
+            currencySuggestionTemplate: function (context) {
+                var template = "/currencies/%25s/";
+                context.url = template.replace('%25s', context.slug);
+                return Handlebars.templates['quick_search'](context);
+            },
+            exchangeSuggestionTemplate: function (context) {
+                var template = "/exchanges/%25s/";
+                context.url = template.replace('%25s', context.slug);
+                return Handlebars.templates['quick_search_exchanges'](context);
+            },
+            currencyLimit: 6,
+            exchangeLimit: 4
+        }, polyglot);
+
+        $('[data-language-toggle]').on('click', function () {
+            dataLayer.push({
+                'event': 'customEvent',
+                'eventCategory': 'Language Dropdown',
+                'eventAction': 'Language Selected',
+                'eventLabel': $(this).data('language-toggle')
+            });
+        });
+
+        var language = $('[data-language-toggle="' + 'en' + '"]').html();
+        $('[data-language-dropdown]').html(language);
+
+        NightMode.initSwitch();
+        ThemeSwitch('.js-theme-switch');
+        ScrollToTop('.scroll-to-top');
+        CookiedDismissableAlert({
+            selector: '.js-cookie-policy-banner',
+            cookieKey: 'cmc_gdpr_hide'
+        });
+    })();
+
+    function userResizedBrowser(actionType) {
+        var actions = {
+            mobileToDesktop: 'Mobile to Desktop',
+            desktopToMobile: 'Desktop to Mobile',
+            noSidebarToSidebar: 'No Sidebar to Sidebar',
+            sidebarToNoSidebar: 'Sidebar to No Sidebar'
+        };
+        var action = actions[actionType];
+        if (action) {
+            return function () {
+                dataLayer.push({
+                    'event': 'customEvent',
+                    'eventCategory': 'Browser Resize',
+                    'eventAction': action,
+                    'eventLabel': undefined
+                });
+            }
+        }
+    }
+
+    MOBILE.onBrowserResize(userResizedBrowser('mobileToDesktop'), userResizedBrowser('desktopToMobile'));
+    $(function () {
+        var sidebarThreshold = 1440;
+        var isWider = $(window).width() >= sidebarThreshold;
+        $(window).on('resize', function () {
+            var screenWidth = $(window).width();
+            if (isWider && screenWidth < sidebarThreshold) {
+                isWider = false;
+                userResizedBrowser('sidebarToNoSidebar')();
+            } else if (!isWider && screenWidth >= sidebarThreshold) {
+                isWider = true;
+                userResizedBrowser('noSidebarToSidebar')();
+            }
+        });
+    });
+</script>
+</body>
+</html>

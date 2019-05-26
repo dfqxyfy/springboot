@@ -2,6 +2,7 @@ package cn.ccs.coin.service;
 
 import cn.ccs.coin.entity.CryptocurrenciesData;
 import cn.ccs.coin.entity.RateData;
+import cn.ccs.coin.entity.TotalData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;
@@ -17,7 +18,6 @@ import java.util.Map;
 
 public class JsoupCryptoDataUtil {
     Document page = null;
-
     public JsoupCryptoDataUtil(){
         try {
             page = Jsoup.parse(new URL("https://coinmarketcap.com/"), 10000);
@@ -39,6 +39,25 @@ public class JsoupCryptoDataUtil {
             list.add(data);
         });
         return list;
+    }
+
+    public TotalData totalSum(){
+        final Elements select = page.select("body > div.cmc-nav-wrap > div.cmc-nav > div.cmc-nav__topbar.cmc-nav-desktop > div > div.cmc-global-stats.js-global-stats");
+        final Elements spans = select.get(0).getElementsByTag("span");
+
+        final String cryptocurrencies = spans.get(0).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
+        final String markets = spans.get(1).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
+        final String marketCap = spans.get(2).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
+        final String vol24h = spans.get(3).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
+        final String btcDominance = spans.get(4).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
+        TotalData data = new TotalData();
+        data.setCryptocurrencies(cryptocurrencies);
+        data.setMarkets(markets);
+        data.setMarketCap(marketCap);
+        data.setVol24h(vol24h);
+        data.setBtcDominance(btcDominance);
+
+        return data;
     }
 
     public List<CryptocurrenciesData> jsoupSpider(){

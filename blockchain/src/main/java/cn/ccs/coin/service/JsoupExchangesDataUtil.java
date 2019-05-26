@@ -44,9 +44,9 @@ public class JsoupExchangesDataUtil {
 
         String adjvol = tds.get(2).attr("data-sort");
 
-        String volume24h = tds.get(3).attr("data-usd");;
-        String volume7d = tds.get(4).attr("data-usd");;
-        String volume30d = tds.get(5).attr("data-usd");;
+        String volume24h = tds.get(3).attr("data-sort");;
+        String volume7d = tds.get(4).attr("data-sort");;
+        String volume30d = tds.get(5).attr("data-sort");;
         String noMarkets = tds.get(6).attr("data-sort");
         String change24h= tds.get(7).attr("data-sort");
         String volGraph7d= tds.get(8).getElementsByTag("a").get(0).getElementsByTag("img").attr("src");

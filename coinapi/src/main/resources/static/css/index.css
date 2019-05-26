@@ -39,11 +39,11 @@ html,body{
     /* font-size: 14px; */
 }
 
-.content #tables td{
+.content table td{
     border-bottom: 1px solid rgb(223, 223, 223);
     height: 60px;
 }
-.content #tables thead td{
+.content table thead td{
     height: 30px;
     font-weight: bolder;
 }

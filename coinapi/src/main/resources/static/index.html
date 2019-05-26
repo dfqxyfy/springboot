@@ -6,7 +6,7 @@
     <script src="common/jquery-3.4.1.min.js"></script>
     <script src="js/index.js"></script>
 
-    <title>测试网站</title>
+    <title>虚拟币行情网</title>
 </head>
 <body>
     <div class="header">
@@ -34,38 +34,69 @@
     <div class="content">
          <div class="tit">Top 100 Cryptocurrencies by Market Capitalization</div>
          <div class="table_head">
-             <span class="checked">Cryptocurrencies<span class="bg"></span></span>
-             <span>Exchanges</span>
-             <span>Watchlist</span>
+             <span class="checked" id="crypto">Cryptocurrencies<span class="bg"></span></span>
+             <span id="exchange">Exchanges</span>
          </div>
-         <table id="tables" width="100%" cellpadding="0" cellspacing="0">
-             <thead>
+        <div id="cryptoTable">
+             <table id="tables" width="100%" cellpadding="0" cellspacing="0">
+                 <thead>
+                    <tr align="center">
+                         <td class="frist">#</td>
+                         <td>Name</td>
+                         <td>Market Cap</td>
+                         <td>Price</td>
+                         <td>Volume(24h)</td>
+                         <td>Circulaing Supply</td>
+                         <td>Change(24h)</td>
+                         <td>Price Graph(7d)</td>
+                     </tr>
+                 </thead>
+                 <tbody id="cryptoData">
+                     <!--<tr align="center">-->
+                         <!--<td class="frist">1</td>-->
+                         <!--<td>1dhj</td>-->
+                         <!--<td>dsp</td>-->
+                         <!--<td>Price</td>-->
+                         <!--<td>33(24h)</td>-->
+                         <!--<td>3 Supply</td>-->
+                         <!--<td>3(24h)</td>-->
+                         <!--<td>P京津冀</td>-->
+                     <!--</tr>-->
+                 </tbody>
+
+            </table>
+        </div>
+
+        <div id="exchangesTable">
+            <table id="tablesExchange" width="100%" cellpadding="0" cellspacing="0">
+                <thead>
                 <tr align="center">
-                     <td class="frist">#</td>
-                     <td>Name</td>
-                     <td>Market Cap</td>
-                     <td>Price</td>
-                     <td>Volume(24h)</td>
-                     <td>Circulaing Supply</td>
-                     <td>Change(24h)</td>
-                     <td>Price Graph(7d)</td>
-                 </tr>
-             </thead>
+                    <td class="frist">#</td>
+                    <td>Name</td>
+                    <td>Adj. Vol 24h</td>
+                    <td>Volume (24h)</td>
+                    <td>Volume (7d)</td>
+                    <td>Volume (30d)</td>
+                    <td>No. Markets</td>
+                    <td>Change(24h)</td>
+                    <td>Launched</td>
+                </tr>
+                </thead>
+                <tbody id="exchangesData">
+                <!--<tr align="center">-->
+                <!--<td class="frist">1</td>-->
+                <!--<td>1dhj</td>-->
+                <!--<td>dsp</td>-->
+                <!--<td>Price</td>-->
+                <!--<td>33(24h)</td>-->
+                <!--<td>3 Supply</td>-->
+                <!--<td>3(24h)</td>-->
+                <!--<td>P京津冀</td>-->
+                <!--</tr>-->
+                </tbody>
 
-             <tbody id="cryptoData">
-                 <!--<tr align="center">-->
-                     <!--<td class="frist">1</td>-->
-                     <!--<td>1dhj</td>-->
-                     <!--<td>dsp</td>-->
-                     <!--<td>Price</td>-->
-                     <!--<td>33(24h)</td>-->
-                     <!--<td>3 Supply</td>-->
-                     <!--<td>3(24h)</td>-->
-                     <!--<td>P京津冀</td>-->
-                 <!--</tr>-->
-             </tbody>
-
-        </table>
+            </table>
+        </div>
     </div>
     
 </body>

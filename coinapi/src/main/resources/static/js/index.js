@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    initBannerData();
     initCrytoData();
     $("#crypto").bind("click",function () {
         $("#exchangesTable").hide();
@@ -16,7 +17,8 @@ $(document).ready(function(){
     });
 });
 function initCrytoData(){
-    $.ajax({url:"/api/getCryptoData",
+    $.ajax({
+        url:"/api/getCryptoData",
         async:false,
         dataType: "json",
         success:function (htmlobj) {
@@ -24,6 +26,26 @@ function initCrytoData(){
         }
     });
 }
+
+function initBannerData(){
+    $.ajax({
+        url:"/api/initData",
+        async:false,
+        dataType: "json",
+        success:function (res) {
+            initGlobalData(res.data.totalData);
+        }
+    });
+}
+
+function initGlobalData(data){
+    $("#crypto").html(data.cryptocurrencies);
+    $("#markets").html(data.markets);
+    $("#marketCap").html(data.marketCap);
+    $("#vol24h").html(data.vol24h);
+    $("#btcDominance").html(data.btcDominance);
+}
+
 function dealCry(htmlobj){
     var list = htmlobj.data;
     var baseBody="";

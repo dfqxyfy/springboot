@@ -62,7 +62,6 @@ public class JsoupCryptoDataUtil {
 
     public List<CryptocurrenciesData> jsoupSpider(){
 
-
         List<CryptocurrenciesData> resList = new ArrayList<>();
         Elements tbody = page.getElementsByTag("tbody");
         Element element = tbody.get(0);

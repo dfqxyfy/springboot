@@ -3,6 +3,10 @@ package cn.ccs.coin.service;
 import cn.ccs.coin.entity.CryptocurrenciesData;
 import cn.ccs.coin.entity.RateData;
 import cn.ccs.coin.entity.TotalData;
+import com.alibaba.fastjson.JSONObject;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
 import org.jsoup.nodes.Document;
@@ -16,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 public class JsoupCryptoDataUtil {
     Document page = null;
     public JsoupCryptoDataUtil(){
@@ -42,22 +47,24 @@ public class JsoupCryptoDataUtil {
     }
 
     public TotalData totalSum(){
-        final Elements select = page.select("body > div.cmc-nav-wrap > div.cmc-nav > div.cmc-nav__topbar.cmc-nav-desktop > div > div.cmc-global-stats.js-global-stats");
-        final Elements spans = select.get(0).getElementsByTag("span");
-
-        final String cryptocurrencies = spans.get(0).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
-        final String markets = spans.get(1).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
-        final String marketCap = spans.get(2).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
-        final String vol24h = spans.get(3).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
-        final String btcDominance = spans.get(4).getElementsByTag("a").get(0).getElementsByTag("span").get(0).text();
         TotalData data = new TotalData();
-        data.setCryptocurrencies(cryptocurrencies);
-        data.setMarkets(markets);
-        data.setMarketCap(marketCap);
-        data.setVol24h(vol24h);
-        data.setBtcDominance(btcDominance);
-
-        return data;
+        try {
+            final Document document = Jsoup.connect("https://s2.coinmarketcap.com/generated/stats/global.json")
+                    .ignoreContentType(true)
+                    .get();
+            final String body = document.getElementsByTag("body").get(0).text();
+            final JSONObject parse = JSONObject.parseObject(body);
+            ;
+            data.setCryptocurrencies(parse.getString("active_cryptocurrencies"));
+            data.setMarkets(parse.getString("active_markets"));
+            data.setMarketCap(parse.getString("total_market_cap_by_available_supply_usd"));
+            data.setVol24h(parse.getString("total_volume_usd"));
+            data.setBtcDominance(parse.getString("bitcoin_percentage_of_market_cap"));
+            return data;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public List<CryptocurrenciesData> jsoupSpider(){
@@ -103,6 +110,19 @@ public class JsoupCryptoDataUtil {
     }
 
     public static void main(String[] args) {
-        new JsoupCryptoDataUtil().jsoupSpider();
+        final JsoupCryptoDataUtil jsoupCryptoDataUtil = new JsoupCryptoDataUtil();
+//        jsoupCryptoDataUtil.jsoupSpider();
+        jsoupCryptoDataUtil.totalSum();
+
+//        final Document parse;
+//        try {
+//            final Document document = Jsoup.connect("https://s2.coinmarketcap.com/generated/stats/global.json")
+//                    .ignoreContentType(true)
+//                    .get();
+//            System.out.println(document);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
     }
 }

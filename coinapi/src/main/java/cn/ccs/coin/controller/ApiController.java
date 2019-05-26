@@ -21,8 +21,8 @@ public class ApiController extends BaseController {
         return success(dataFindService.getExchangesData());
     }
 
-    @RequestMapping("getRate")
+    @RequestMapping("initData")
     public String deploy(){
-        return success(dataFindService.getRateData());
+        return success(dataFindService.initData());
     }
 }

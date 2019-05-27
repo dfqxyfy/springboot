@@ -95,14 +95,14 @@ function dealExchange(htmlobj) {
         baseBody+=`<tr align="center">
                      <td class="frist">${i+1}</td>
                      <td data_name="${obj.name}">${obj.name}</td>
-                     <td data_dollar=">${obj.adjvol}">${obj.adjvol}</td>
+                     <td data_dollar="${obj.adjvol}">${obj.adjvol}</td>
                      <td data_dollar="${obj.volume24h}">${obj.volume24h}</td>
                      <td data_dollar="${obj.volume7d}">${obj.volume7d}</td>
                      <td data_dollar="${obj.volume30d}">${obj.volume30d}</td>
                      <td data_dollar="${obj.noMarkets}">${obj.noMarkets}</td>
                      <td data_rate="${obj.change24h}">${obj.change24h}</td>
                      <td data_name="${obj.launched}">${obj.launched}</td>
-                     <td data_dollar=""></td>
+                     <td data_bak=""></td>
                  </tr>`;
     }
     $("#exchangesData").html(baseBody);

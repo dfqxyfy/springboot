@@ -50,13 +50,15 @@ html,body{
 .table_head{
     line-height: 50px;
     border-bottom: 1px solid rgb(223, 223, 223);
-    color: blue;
+    color: #000;
+    display: flex;
+    flex-direction: row;
 }
 .table_head .checked{
     border: 1px solid rgb(223, 223, 223);
     border-bottom: none;
     position: relative;
-    color: #000;
+    color: blue;
 }
 .table_head .checked .bg{
     background: #fff;
@@ -67,7 +69,6 @@ html,body{
     bottom: -2px;
 }
 .table_head span{
-    display: inline-block;
     width: 170px;
     text-align: center;
 }
@@ -80,3 +81,13 @@ html,body{
 .frist{
     width: 80px;
 }
+table tbody td{
+    text-align:right;
+}
+table tbody td:nth-child(1){
+    text-align:left;
+}
+table tbody td:nth-child(2){
+    text-align:left;
+}
+

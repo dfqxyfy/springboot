@@ -4485,7 +4485,6 @@ button.close {
     position:fixed
 }
 @-ms-viewport {
-    width:device-width
 }
 .visible-xs, .visible-sm, .visible-md, .visible-lg {
     display:none!important
@@ -4644,7 +4643,6 @@ button.close {
     -o-transform:scaleX(-1);
     -webkit-transform:scaleX(-1);
     transform:scaleX(-1);
-    filter:FlipH;
     -ms-filter:"FlipH"
 }
 .glyphicons.flipv {
@@ -4652,7 +4650,6 @@ button.close {
     -o-transform:scaleY(-1);
     -webkit-transform:scaleY(-1);
     transform:scaleY(-1);
-    filter:FlipV;
     -ms-filter:"FlipV"
 }
 .glyphicons.rotate90 {
@@ -9846,9 +9843,6 @@ img.sparkline {
 }
 .floating-header thead tr th {
     position:-webkit-sticky;
-    position:-moz-sticky;
-    position:-ms-sticky;
-    position:-o-sticky;
     position:sticky;
     top:-1px;
     background-color:#fff;

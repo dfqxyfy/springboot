@@ -1,4 +1,5 @@
 var rateMap=new Map();
+let firstInit=false;
 $(document).ready(function(){
     initBannerData();
     initCrytoData();
@@ -16,11 +17,13 @@ $(document).ready(function(){
         $("#exchangesTable").show();
         initExchangesData();
     });
-    $("#lang").change(function(){
-        let coin = $(this).children('option:selected').val();
-        switchCurrency(coin);
-    });
+    $("#lang").change(swcurrency);
 });
+
+function swcurrency(){
+    let coin = $("#lang").children('option:selected').val();
+    switchCurrency(coin);
+}
 function initCrytoData(){
     $.ajax({
         url:"/api/getCryptoData",
@@ -28,6 +31,7 @@ function initCrytoData(){
         dataType: "json",
         success:function (htmlobj) {
             dealCry(htmlobj);
+            swcurrency();
         }
     });
 }
@@ -40,6 +44,7 @@ function initBannerData(){
         success:function (res) {
             initGlobalData(res.data.totalData);
             initRate(res.data.listRateData);
+
         }
     });
 }
@@ -75,6 +80,7 @@ function dealCry(htmlobj){
                  </tr>`;
     }
     $("#cryptoData").html(baseBody);
+
 }
 
 function initExchangesData() {
@@ -83,6 +89,7 @@ function initExchangesData() {
         dataType: "json",
         success:function (htmlobj) {
             dealExchange(htmlobj);
+            swcurrency();
         }
     });
 }

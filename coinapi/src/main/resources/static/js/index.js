@@ -136,7 +136,7 @@ function switchCurrency(coin){
     );
     $("td[data_rate]").each(
         function (index,ele) {
-            let money=$(ele).attr("data_rate");
+            let money=$(ele).attr("data_rate")/1;
             ele.innerText= " "+ money.toFixed(2) + "%";
         }
     );

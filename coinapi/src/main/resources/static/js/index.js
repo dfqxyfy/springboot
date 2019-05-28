@@ -130,7 +130,15 @@ function switchCurrency(coin){
     }
     $("td[data_dollar]").each(
         function (index,ele) {
-            ele.innerText=pre + " "+$(ele).attr("data_dollar")*rate + suffix;
+            let money=$(ele).attr("data_dollar")*rate;
+            ele.innerText=pre + " "+ money.toFixed(2) + suffix;
         }
     );
+    $("td[data_rate]").each(
+        function (index,ele) {
+            let money=$(ele).attr("data_rate")*rate;
+            ele.innerText= " "+ money.toFixed(2) + "%";
+        }
+    );
+
 }

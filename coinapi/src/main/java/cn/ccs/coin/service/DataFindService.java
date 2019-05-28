@@ -20,11 +20,13 @@ public class DataFindService {
 
     public List<CryptocurrenciesData> getCryptoData(){
         Query query = new Query();
+        query.limit(100);
         return mongoTemplate.find(query,CryptocurrenciesData.class);
     }
 
     public List<ExchangesData> getExchangesData(){
         Query query = new Query();
+        query.limit(100);
         return mongoTemplate.find(query,ExchangesData.class);
     }
 

@@ -115,3 +115,7 @@ table tbody td:nth-child(2){
     font-size: 12px;
 }
 
+td img{
+    width: 16px;
+    height: 16px;
+}

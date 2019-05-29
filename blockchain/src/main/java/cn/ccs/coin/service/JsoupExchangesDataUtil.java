@@ -42,6 +42,10 @@ public class JsoupExchangesDataUtil {
         String name = tds.get(1).attr("data-sort");
         String nameUrl = tds.get(1).getElementsByTag("img").get(0).attr("src");
 
+        if(nameUrl!=null && nameUrl.startsWith("data:image")){
+            nameUrl = tds.get(1).getElementsByTag("img").get(0).attr("data-src");
+        }
+
         String adjvol = tds.get(2).attr("data-sort");
 
         String volume24h = tds.get(3).attr("data-sort");;
@@ -55,7 +59,7 @@ public class JsoupExchangesDataUtil {
         ExchangesData data = new ExchangesData();
         data.setNum(num);
         data.setName(name);
-        data.setNameUrl(nameUrl);
+        data.setIconUrl(nameUrl);
         data.setAdjvol(adjvol);
         data.setVolume24h(volume24h);
         data.setVolume7d(volume7d);

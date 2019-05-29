@@ -11,8 +11,8 @@ public class CryptocurrenciesData {
     private String num;
     private String simpleName;
     private String name;
-    private String nameImg;
-
+    private String iconUrl;
+    private String localUrl;
 
     private String marketCap;
     private String price;
@@ -28,8 +28,9 @@ public class CryptocurrenciesData {
                 "	\t" + num + 
                 "	\t" + simpleName +
                 ", 	\t" + name +
-                ", 	\t" + nameImg + 
-                ", 	\t" + marketCap + 
+                ", 	\t" + iconUrl +
+                ", 	\t" + localUrl +
+                ", 	\t" + marketCap +
                 ", 	\t" + price + 
                 ", 	\t" + volume24 + 
                 ", 	\t" + circulatingSupply + 

@@ -18,12 +18,14 @@ import java.util.List;
 @Service
 public class StoreCyptoService {
 
-    //@Autowired
-
-
     @Autowired
     private MongoTemplate mongoTemplate;
 
+    @Autowired
+    private LocatePicService locatePicService;
+
+    private final String CRY_STR = "crypto";
+    private final String EXCHANGE_STR = "exchange";
     //@PostConstruct
     public void updateCryptocurrencies(){
         JsoupCryptoDataUtil jsoupDataUtil = new JsoupCryptoDataUtil();
@@ -31,6 +33,8 @@ public class StoreCyptoService {
         //mongoTemplate.insert(cryptocurrenciesData);
         final Date now = new Date();
         list.forEach(data->{
+            String localUrl = locatePicService.findUrlByCoin(CRY_STR,data.getSimpleName(), data.getIconUrl());
+            data.setLocalUrl(localUrl);
             Query query = new Query();
             //data.setUpdateTime(now);
             query.addCriteria(Criteria.where("simpleName").is(data.getSimpleName()));
@@ -69,6 +73,8 @@ public class StoreCyptoService {
         //mongoTemplate.insert(cryptocurrenciesData);
         Date now = new Date();
         list.forEach(data->{
+            String localUrl = locatePicService.findUrlByCoin(EXCHANGE_STR,data.getName(), data.getIconUrl());
+            data.setLocalUrl(localUrl);
             //data.setUpdateTime(now);
             Query query = new Query();
             query.addCriteria(Criteria.where("name").is(data.getName()));

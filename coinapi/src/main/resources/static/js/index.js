@@ -68,9 +68,9 @@ function dealCry(htmlobj){
     var baseBody="";
     for(var i=0;i<list.length;i++){
         var obj=list[i];
-        baseBody+=`<tr align="center">
+        baseBody+=`<img align="center">
                      <td class="frist">${i+1}</td>
-                     <td data_name="${obj.simpleName}">${obj.simpleName}</td>
+                     <td data_name="${obj.simpleName}"><img src="${obj.localUrl}"></img>${obj.simpleName}</td>
                      <td data_dollar="${obj.marketCap}">${obj.marketCap}</td>
                      <td data_dollar="${obj.price}">${obj.price}</td>
                      <td data_dollar="${obj.volume24}">${obj.volume24}</td>
@@ -101,7 +101,7 @@ function dealExchange(htmlobj) {
         var obj=list[i];
         baseBody+=`<tr align="center">
                      <td class="frist">${i+1}</td>
-                     <td data_name="${obj.name}">${obj.name}</td>
+                     <td data_name="${obj.name}"><img src="${obj.localUrl}"></img>${obj.name}</td>
                      <td data_dollar="${obj.adjvol}">${obj.adjvol}</td>
                      <td data_dollar="${obj.volume24h}">${obj.volume24h}</td>
                      <td data_dollar="${obj.volume7d}">${obj.volume7d}</td>

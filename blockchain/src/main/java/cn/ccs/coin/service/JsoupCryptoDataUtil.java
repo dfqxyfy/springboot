@@ -86,6 +86,9 @@ public class JsoupCryptoDataUtil {
         String num = tds.get(0).ownText();
         String full = tds.get(1).attr("data-sort");
         String coinUrl = tds.get(1).getElementsByTag("img").get(0).attr("src");
+        if(coinUrl!=null && coinUrl.startsWith("data:image")){
+            coinUrl = tds.get(1).getElementsByTag("img").get(0).attr("data-src");
+        }
         String simple = tds.get(1).getElementsByTag("span").get(0).text();
 
         String marketCap = tds.get(2).attr("data-sort");
@@ -99,7 +102,7 @@ public class JsoupCryptoDataUtil {
         data.setNum(num);
         data.setSimpleName(simple);
         data.setName(full);
-        data.setNameImg(coinUrl);
+        data.setIconUrl(coinUrl);
         data.setMarketCap(marketCap);
         data.setPrice(price);
         data.setVolume24(volume24);

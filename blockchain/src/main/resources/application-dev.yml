@@ -3,3 +3,5 @@ spring:
       mongodb:
         ##uri: mongodb://localhost:27017/coinmarketcap
         uri: mongodb://172.16.117.16:27017/test
+download:
+  path: /ccs/

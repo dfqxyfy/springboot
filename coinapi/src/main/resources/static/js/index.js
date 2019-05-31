@@ -137,7 +137,7 @@ function switchCurrency(coin){
             }else{
                 money=money.toFixed(2);
             }
-            ele.innerText=pre + " "+ money + suffix;
+            ele.innerText=pre + " "+ toThousands(money) + suffix;
         }
     );
     $("td[data_rate]").each(
@@ -148,4 +148,32 @@ function switchCurrency(coin){
         }
     );
 
+}
+
+
+function toThousands(num) {
+    var num = (num || 0).toString(),
+        result = '';
+//判断是否带小数点
+    if (num.split('.')[1]) {
+        var numInt = num.split('.')[0],
+            numFlo = num.split('.')[1];
+        result = formatter(numInt) + '.' + numFlo
+    } else {
+        result = formatter(num);
+    }
+    return result;
+
+//格式化整数
+    function formatter(numInt) {
+        var resultInt = '';
+        while (numInt.length > 3) {
+            resultInt = ',' + numInt.slice(-3) + resultInt;
+            numInt = numInt.slice(0, numInt.length - 3);
+        }
+        if (numInt) {
+            resultInt = numInt + resultInt;
+        }
+        return resultInt;
+    }
 }

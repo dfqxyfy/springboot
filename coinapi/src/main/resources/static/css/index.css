@@ -32,6 +32,9 @@ html,body{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+    position: relative;
+    width: 100%;
+    display: inline-block;
 }
 .content{
     padding-left: 80px;
@@ -118,4 +121,20 @@ table tbody td:nth-child(2){
 td img{
     width: 16px;
     height: 16px;
+}
+.logo{
+    width: 64px;
+    height: 64px;
+    margin-top: 10px;
+}
+.header_nav_logs{
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+.img_text{
+    position: absolute;
+    top: 5px;
+    left: 120px;
+    font-family: fantasy;
 }

@@ -123,9 +123,10 @@ td img{
     height: 16px;
 }
 .logo{
-    width: 64px;
-    height: 64px;
-    margin-top: 10px;
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 15px;
 }
 .header_nav_logs{
     position: absolute;
